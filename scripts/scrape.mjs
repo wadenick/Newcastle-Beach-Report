@@ -62,22 +62,32 @@ function parseChildPage(html, beach) {
     body,
     /Warning:\s*(.+?)(?=(\d+\s+hours?\s+ago)|(\d+\s+min\s+ago)|Swimming safety|Information Last updated|Lifeguards on duty|$)/i
   );
-  
-  warning = warning.replace(/\u00A0/g, ' ');
 
   if (warning) {
     warning = warning
+      .replace(/\u00A0/g, ' ')
       .replace(/View\s+beach\s+on\s+map[^\w]*?/gi, '')
       .replace(/\s+/g, ' ')
-      .replace(/\s+([.,!])/g, '$1') // fix spacing before punctuation
+      .replace(/\s+([.,!])/g, '$1')
       .trim();
   }
 
   const swimmingScore = numberMatch(body, /Swimming safety.*?(\d+)\s*\/10/i);
   const surfingScore = numberMatch(body, /Surf quality\s+(\d+)\s*\/10/i);
-  const crowdLevel = textMatch(body, /Crowds\s+(Uncrowded|Moderately busy|Crowded|Temporarily Unavailable)/i);
-  const lastUpdatedText = textMatch(body, /Information Last updated\s+(.+?)(?=Lifeguards on duty|Facilities|$)/i)
-    || textMatch(body, /(\d+\s+(?:min|mins|minutes|hour|hours)\s+ago\s*·?\s*\d{1,2}:?\d{0,2}\s*(?:am|pm)?)/i);
+  const crowdLevel = textMatch(
+    body,
+    /Crowds\s+(Uncrowded|Moderately busy|Crowded|Temporarily Unavailable)/i
+  );
+
+  const lastUpdatedText =
+    textMatch(
+      body,
+      /Information Last updated\s+(\d+\s+(?:min|mins|minutes|hour|hours)\s+ago(?:\s*·\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))?)/i
+    ) ||
+    textMatch(
+      body,
+      /(\d+\s+(?:min|mins|minutes|hour|hours)\s+ago(?:\s*·\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))?)/i
+    );
 
   const isClosedForSwimming = !!warning && /closed due to weather conditions/i.test(warning);
 
