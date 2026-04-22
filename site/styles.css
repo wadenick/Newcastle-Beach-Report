@@ -26,7 +26,7 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
 }
-.hero, .toolbar {
+.hero {
   display: flex;
   gap: 24px;
   justify-content: space-between;
@@ -34,17 +34,23 @@ body {
   border-radius: 28px;
   padding: 24px;
 }
+.toolbar {
+  display: flex;
+  gap: 24px;
+  align-items: end;
+  border-radius: 28px;
+  padding: 24px;
+}
 .newcastle-logo-small {
-  height: 32px;
+  height: 16px;
   width: auto;
   display: block;
   opacity: 0.8;
   transition: opacity 0.2s ease;
 }
 .logo-container-small {
-  height: 32px;
-  width: 32px;
-  overflow: hidden;
+  height: 16px;
+  width: 55px;
   border-radius: 4px;
   display: inline-flex;
   align-items: center;
