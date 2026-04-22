@@ -1,0 +1,14 @@
+{
+  "name": "newcastle-beach-report-gh",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scrape": "node scripts/scrape.mjs",
+    "build": "node scripts/scrape.mjs",
+    "dev": "python3 -m http.server 4173 -d site"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}

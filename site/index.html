@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newcastle Beach Report</title>
+    <meta name="description" content="A simple visual list of Newcastle beach swimming conditions." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Live beach conditions</p>
+          <h1>Newcastle beach report</h1>
+          <p class="lede">
+            A cleaner, closure-first view of swimming conditions across Newcastle beaches.
+          </p>
+          <div class="chips">
+            <span class="chip">Refreshes every 10 minutes</span>
+            <span class="chip">Child-page closure warnings included</span>
+            <span class="chip">Static site on GitHub Pages</span>
+          </div>
+        </div>
+        <div class="stats" id="stats"></div>
+      </section>
+
+      <section class="refresh-banner" id="refreshBanner">
+        <div>
+          <p class="banner-label">Last refreshed</p>
+          <p class="banner-value" id="generatedAt">Loading latest report…</p>
+        </div>
+        <div>
+          <p class="banner-label">Data source</p>
+          <p class="banner-value banner-link"><a id="sourceLink" target="_blank" rel="noreferrer">City of Newcastle beach pages</a></p>
+        </div>
+        <div>
+          <p class="banner-label">Update cadence</p>
+          <p class="banner-value">GitHub Actions every 10 minutes</p>
+        </div>
+      </section>
+
+      <section class="overview-grid">
+        <section class="map-panel">
+          <div class="section-head">
+            <div>
+              <h2>Beach map strip</h2>
+              <p>A simple north-to-south view so people can scan the coast quickly.</p>
+            </div>
+          </div>
+          <div class="map-strip" id="mapStrip"></div>
+        </section>
+
+        <aside class="summary-panel" id="summaryPanel">
+          <div class="section-head compact">
+            <div>
+              <h2>Best option now</h2>
+              <p>Strongest open beach based on swim first, then surf.</p>
+            </div>
+          </div>
+          <div id="bestBeach"></div>
+        </aside>
+      </section>
+
+      <section class="toolbar">
+        <div>
+          <h2>Current conditions</h2>
+          <p>Closures from each child beach page override the summary list.</p>
+        </div>
+        <div class="filters">
+          <button class="filter is-active" data-filter="all">All beaches</button>
+          <button class="filter" data-filter="closed">Closed only</button>
+          <button class="filter" data-filter="best">Best swimming</button>
+        </div>
+      </section>
+
+      <section class="cards" id="cards"></section>
+    </main>
+
+    <template id="card-template">
+      <a class="card" target="_blank" rel="noreferrer">
+        <div class="card-thumb">
+          <div class="thumb-overlay"></div>
+          <div class="thumb-meta">
+            <span class="thumb-badge">Beach report</span>
+            <span class="thumb-name"></span>
+          </div>
+        </div>
+        <div class="card-head">
+          <div>
+            <h3 class="card-title"></h3>
+            <p class="card-updated"></p>
+          </div>
+          <span class="status-pill"></span>
+        </div>
+        <div class="warning hidden"></div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Swim</div>
+            <div><span class="metric-value swim-value"></span><span class="metric-unit">/10</span></div>
+            <span class="score-pill swim-pill"></span>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Surf</div>
+            <div><span class="metric-value surf-value"></span><span class="metric-unit">/10</span></div>
+            <span class="score-pill surf-pill"></span>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Crowd</div>
+            <div class="crowd-value"></div>
+          </div>
+        </div>
+      </a>
+    </template>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
