@@ -118,35 +118,26 @@ function renderCards(beaches) {
   cardsEl.innerHTML = '';
   for (const beach of filteredBeaches(beaches)) {
     const node = template.content.firstElementChild.cloneNode(true);
-    const visual = beachVisuals[beach.slug] || { gradient: 'gradient-newcastle', short: beach.name.slice(0, 3).toUpperCase() };
 
     node.href = beach.url;
-    node.querySelector('.card-thumb').classList.add(visual.gradient);
-    node.querySelector('.thumb-name').textContent = visual.short;
     node.querySelector('.card-title').textContent = beach.name;
     node.querySelector('.card-updated').textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
 
-    const status = node.querySelector('.status-pill');
-    status.textContent = statusText(beach);
-    status.className = `status-pill ${beach.isClosedForSwimming ? 'status-closed' : ((beach.swimmingScore ?? 0) >= 5 ? 'status-strong' : 'status-open')}`;
-
-    const warning = node.querySelector('.warning');
-    if (beach.childWarning) {
-      warning.textContent = beach.childWarning;
-      warning.classList.remove('hidden');
+    const statusEl = node.querySelector('.card-status');
+    if (beach.isClosedForSwimming) {
+      statusEl.textContent = '🛑 CLOSED FOR SWIMMING';
+      statusEl.className = 'card-status card-status-closed';
+    } else if ((beach.swimmingScore ?? 0) >= 5) {
+      statusEl.textContent = '✓ STRONG OPTION';
+      statusEl.className = 'card-status card-status-strong';
+    } else {
+      statusEl.textContent = '○ OPEN';
+      statusEl.className = 'card-status card-status-open';
     }
 
     node.querySelector('.swim-value').textContent = beach.swimmingScore ?? '—';
     node.querySelector('.surf-value').textContent = beach.surfingScore ?? '—';
     node.querySelector('.crowd-value').textContent = beach.crowdLevel ?? 'Unknown';
-
-    const swimPill = node.querySelector('.swim-pill');
-    swimPill.textContent = scoreLabel(beach.swimmingScore);
-    swimPill.classList.add(scoreClass(beach.swimmingScore));
-
-    const surfPill = node.querySelector('.surf-pill');
-    surfPill.textContent = scoreLabel(beach.surfingScore);
-    surfPill.classList.add(scoreClass(beach.surfingScore));
 
     cardsEl.appendChild(node);
   }

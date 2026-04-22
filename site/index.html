@@ -84,35 +84,13 @@
 
     <template id="card-template">
       <a class="card" target="_blank" rel="noreferrer">
-        <div class="card-thumb">
-          <div class="thumb-overlay"></div>
-          <div class="thumb-meta">
-            <span class="thumb-badge">Beach report</span>
-            <span class="thumb-name"></span>
-          </div>
-        </div>
-        <div class="card-head">
-          <div>
-            <h3 class="card-title"></h3>
-            <p class="card-updated"></p>
-          </div>
-          <span class="status-pill"></span>
-        </div>
-        <div class="warning hidden"></div>
-        <div class="metrics">
-          <div class="metric">
-            <div class="metric-label">Swim</div>
-            <div><span class="metric-value swim-value"></span><span class="metric-unit">/10</span></div>
-            <span class="score-pill swim-pill"></span>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Surf</div>
-            <div><span class="metric-value surf-value"></span><span class="metric-unit">/10</span></div>
-            <span class="score-pill surf-pill"></span>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Crowd</div>
-            <div class="crowd-value"></div>
+        <div class="card-status"></div>
+        <div class="card-body">
+          <h3 class="card-title"></h3>
+          <p class="card-updated"></p>
+          <div class="card-scores">
+            <div class="score-line">Swim: <span class="swim-value"></span>/10</div>
+            <div class="score-line">Surf: <span class="surf-value"></span>/10 • <span class="crowd-value"></span></div>
           </div>
         </div>
       </a>
