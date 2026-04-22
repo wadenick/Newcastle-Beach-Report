@@ -76,6 +76,7 @@ function renderMap(beaches) {
   track.innerHTML = `
     <div class="map-water"></div>
     <div class="map-coast"></div>
+    <div class="map-harbor"></div>
     <div class="map-label north">North</div>
     <div class="map-label south">South</div>
   `;
