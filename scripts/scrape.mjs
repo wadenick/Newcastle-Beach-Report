@@ -63,9 +63,9 @@ function parseChildPage(html, beach) {
     /Warning:\s*(.+?)(?=(\d+\s+hours?\s+ago)|(\d+\s+min\s+ago)|Swimming safety|Information Last updated|Lifeguards on duty|$)/i
   );
 
-  // Remove "View beach on map" text if present
+  // Remove "View beach on map" text if present, along with surrounding whitespace/punctuation
   if (warning) {
-    warning = warning.replace(/View beach on map/gi, '').trim();
+    warning = warning.replace(/\s*View\s+beach\s+on\s+map\s*/gi, '').replace(/\s+/g, ' ').trim();
   }
 
   const swimmingScore = numberMatch(body, /Swimming safety.*?(\d+)\s*\/10/i);

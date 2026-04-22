@@ -125,7 +125,7 @@ function renderCards(beaches) {
 
     const statusEl = node.querySelector('.card-status');
     if (beach.isClosedForSwimming) {
-      statusEl.textContent = '🛑 CLOSED FOR SWIMMING';
+      statusEl.textContent = '⚠️ CLOSED FOR SWIMMING';
       statusEl.className = 'card-status card-status-closed';
     } else if ((beach.swimmingScore ?? 0) >= 5) {
       statusEl.textContent = '✓ STRONG OPTION';
