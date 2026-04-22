@@ -36,7 +36,7 @@ function scoreClass(score) {
 }
 
 function statusText(beach) {
-  if (beach.isClosedForSwimming) return 'STOP';
+  if (beach.isClosedForSwimming) return 'Closed';
   if ((beach.swimmingScore ?? 0) >= 5) return 'Strong option';
   return 'Open';
 }
@@ -158,7 +158,10 @@ function renderCards(beaches) {
 }
 
 async function load() {
-  const res = await fetch('./data/beaches.json', { cache: 'no-store' });
+  const basePath = window.location.pathname.includes('/Newcastle-Beach-Report/') 
+    ? '/Newcastle-Beach-Report' 
+    : '';
+  const res = await fetch(`${basePath}/data/beaches.json`, { cache: 'no-store' });
   payload = await res.json();
   renderStats(payload.beaches);
   renderMap(payload.beaches);
