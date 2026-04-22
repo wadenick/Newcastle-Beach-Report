@@ -11,12 +11,12 @@ let currentFilter = 'all';
 let payload;
 
 const beachVisuals = {
-  'stockton-beach': { gradient: 'gradient-stockton', position: 8, short: 'STO' }
+  'stockton-beach': { gradient: 'gradient-stockton', position: 8, short: 'STO' },
   'nobbys-beach': { gradient: 'gradient-nobbys', position: 28, short: 'NOB' },
   'newcastle-beach': { gradient: 'gradient-newcastle', position: 42, short: 'NEW' },
   'bar-beach': { gradient: 'gradient-bar', position: 64, short: 'BAR' },
   'dixon-park-beach': { gradient: 'gradient-dixon', position: 74, short: 'DIX' },
-  'merewether-beach': { gradient: 'gradient-merewether', position: 83, short: 'MER' },
+  'merewether-beach': { gradient: 'gradient-merewether', position: 83, short: 'MER' }
 };
 
 function scoreLabel(score) {
