@@ -62,10 +62,15 @@ function parseChildPage(html, beach) {
     body,
     /Warning:\s*(.+?)(?=(\d+\s+hours?\s+ago)|(\d+\s+min\s+ago)|Swimming safety|Information Last updated|Lifeguards on duty|$)/i
   );
+  
+  warning = warning.replace(/\u00A0/g, ' ');
 
-  // Remove "View beach on map" text if present, along with surrounding whitespace/punctuation
   if (warning) {
-    warning = warning.replace(/\s*View\s+beach\s+on\s+map\s*/gi, '').replace(/\s+/g, ' ').trim();
+    warning = warning
+      .replace(/View\s+beach\s+on\s+map[^\w]*?/gi, '')
+      .replace(/\s+/g, ' ')
+      .replace(/\s+([.,!])/g, '$1') // fix spacing before punctuation
+      .trim();
   }
 
   const swimmingScore = numberMatch(body, /Swimming safety.*?(\d+)\s*\/10/i);
