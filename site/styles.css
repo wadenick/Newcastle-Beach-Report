@@ -131,11 +131,11 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
 }
 .map-harbor {
   position: absolute;
-  left: 12%;
+  left: 11.2%;
   right: auto;
   bottom: 18px;
-  width: 3px;
-  height: 95px;
+  width: 10px;
+  height: 55px;
   background: linear-gradient(180deg, #0ea5e9, #0284c7);
   box-shadow: 0 0 12px rgba(14,165,233,0.5);
   z-index: 2;
@@ -251,7 +251,7 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
 .status-pill, .score-pill {
   display:inline-flex; align-items:center; border-radius:999px; padding:8px 12px; font-size:.8rem; font-weight:600;
 }
-.status-closed { background: #dc2626; color:#fff; border-radius: 0; padding: 8px 10px; clip-path: polygon(29.3% 0%, 70.7% 0%, 100% 29.3%, 100% 70.7%, 70.7% 100%, 29.3% 100%, 0% 70.7%, 0% 29.3%); }
+.status-closed { background: #dc2626; color:#fff; }
 .status-open { background: #d1fae5; color: #065f46; }
 .status-strong { background: #cffafe; color: #155e75; }
 .warning { margin: 16px 20px 0; border-radius: 20px; border:1px solid #fecaca; background:#fef2f2; color:#991b1b; padding: 14px; font-weight: 600; }
