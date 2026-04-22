@@ -34,27 +34,28 @@ body {
   border-radius: 28px;
   padding: 24px;
 }
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 24px;
-}
-.newcastle-logo {
-  height: 136px;
+.newcastle-logo-small {
+  height: 32px;
   width: auto;
   display: block;
-  opacity: 0.9;
+  opacity: 0.8;
   transition: opacity 0.2s ease;
 }
-.logo-container {
-  height: 136px;
-  width: 136px;
+.logo-container-small {
+  height: 32px;
+  width: 32px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
 }
-.logo-container:hover .newcastle-logo {
+.logo-container-small:hover .newcastle-logo-small {
   opacity: 1;
+}
+.banner-value.banner-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .refresh-banner {
   margin-top: 16px;
