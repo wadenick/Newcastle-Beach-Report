@@ -58,10 +58,15 @@ function parseChildPage(html, beach) {
   const $ = cheerio.load(html);
   const body = clean($('body').text());
 
-  const warning = textMatch(
+  let warning = textMatch(
     body,
     /Warning:\s*(.+?)(?=(\d+\s+hours?\s+ago)|(\d+\s+min\s+ago)|Swimming safety|Information Last updated|Lifeguards on duty|$)/i
   );
+
+  // Remove "View beach on map" text if present
+  if (warning) {
+    warning = warning.replace(/View beach on map/gi, '').trim();
+  }
 
   const swimmingScore = numberMatch(body, /Swimming safety.*?(\d+)\s*\/10/i);
   const surfingScore = numberMatch(body, /Surf quality\s+(\d+)\s*\/10/i);
