@@ -36,7 +36,7 @@ function scoreClass(score) {
 }
 
 function statusText(beach) {
-  if (beach.isClosedForSwimming) return 'Swimming closed';
+  if (beach.isClosedForSwimming) return 'STOP';
   if ((beach.swimmingScore ?? 0) >= 5) return 'Strong option';
   return 'Open';
 }
@@ -91,7 +91,6 @@ function renderMap(beaches) {
     pin.style.left = `${visual.position}%`;
     pin.innerHTML = `
       <span class="map-dot"></span>
-      <span class="map-name">${beach.name}</span>
       <span class="map-mini ${visual.gradient}">${visual.short}</span>
     `;
     track.appendChild(pin);

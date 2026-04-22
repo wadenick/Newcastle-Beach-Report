@@ -42,12 +42,18 @@ body {
 }
 .newcastle-logo {
   height: 136px;
-  width: 136px;
-  overflow: hidden;
+  width: auto;
+  display: block;
   opacity: 0.9;
   transition: opacity 0.2s ease;
 }
-.newcastle-logo:hover {
+.logo-container {
+  height: 136px;
+  width: 136px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.logo-container:hover .newcastle-logo {
   opacity: 1;
 }
 .refresh-banner {
@@ -245,7 +251,7 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
 .status-pill, .score-pill {
   display:inline-flex; align-items:center; border-radius:999px; padding:8px 12px; font-size:.8rem; font-weight:600;
 }
-.status-closed { background: #dc2626; color:#fff; border-radius: 4px; clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }
+.status-closed { background: #dc2626; color:#fff; border-radius: 0; padding: 8px 10px; clip-path: polygon(29.3% 0%, 70.7% 0%, 100% 29.3%, 100% 70.7%, 70.7% 100%, 29.3% 100%, 0% 70.7%, 0% 29.3%); }
 .status-open { background: #d1fae5; color: #065f46; }
 .status-strong { background: #cffafe; color: #155e75; }
 .warning { margin: 16px 20px 0; border-radius: 20px; border:1px solid #fecaca; background:#fef2f2; color:#991b1b; padding: 14px; font-weight: 600; }
