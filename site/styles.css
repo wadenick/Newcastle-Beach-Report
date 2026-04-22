@@ -214,9 +214,9 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   text-align: center;
   border-bottom: 1px solid rgba(15,23,42,0.08);
 }
-.card-status-closed { background: #fecaca; color: #991b1b; }
-.card-status-open { background: #d1fae5; color: #065f46; }
-.card-status-strong { background: #cffafe; color: #155e75; }
+.card-status-closed { background: #dc2626; color: #fff; }
+.card-status-open { background: #10b981; color: #fff; }
+.card-status-strong { background: #0ea5e9; color: #fff; }
 .card-body {
   padding: 16px;
   flex: 1;
