@@ -89,7 +89,9 @@ function parseChildPage(html, beach) {
       /(\d+\s+(?:min|mins|minutes|hour|hours)\s+ago(?:\s*·\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))?)/i
     );
 
-  const isClosedForSwimming = !!warning && /closed due to weather conditions/i.test(warning);
+  const isClosedForSwimming =
+    !!warning &&
+    (/closed due to weather conditions/i.test(warning) || /^Other$/i.test(warning));
 
   return {
     slug: beach.slug,
