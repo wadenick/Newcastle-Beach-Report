@@ -58,19 +58,60 @@ function parseChildPage(html, beach) {
   const $ = cheerio.load(html);
   const body = clean($('body').text());
 
-  let warning = textMatch(
-    body,
-    /Warning:\s*(.+?)(?=(\d+\s+hours?\s+ago)|(\d+\s+min\s+ago)|Swimming safety|Information Last updated|Lifeguards on duty|$)/i
-  );
+  function cleanExtractedText(value) {
+    if (!value) return null;
 
-  if (warning) {
-    warning = warning
+    const cleaned = value
       .replace(/\u00A0/g, ' ')
       .replace(/View\s+beach\s+on\s+map[^\w]*?/gi, '')
       .replace(/\s+/g, ' ')
       .replace(/\s+([.,!])/g, '$1')
       .trim();
+
+    return cleaned || null;
   }
+
+  function getChildWarning($, body) {
+    // First try to detect an actual warning block in the DOM.
+    // This is more reliable than only parsing the flattened body text.
+    const warningStrong = $('strong')
+      .filter((_, el) => clean($(el).text()).toLowerCase() === 'warning:')
+      .first();
+
+    if (warningStrong.length) {
+      // Try the next sibling first, which matches markup like:
+      // <strong>Warning:</strong><span>Other</span>
+      let warningText = cleanExtractedText(warningStrong.next().text());
+
+      // Fallback: grab the parent text and strip the "Warning:" label
+      if (!warningText) {
+        const parentText = cleanExtractedText(warningStrong.parent().text());
+        if (parentText) {
+          warningText = cleanExtractedText(
+            parentText.replace(/^Warning:\s*/i, '')
+          );
+        }
+      }
+
+      // Final fallback: use just "Warning" presence even if the trailing text is empty
+      return warningText || 'Warning present';
+    }
+
+    // Text-based fallback if DOM structure changes
+    const textWarning = textMatch(
+      body,
+      /Warning:\s*(.+?)(?=(\d+\s+hours?\s+ago)|(\d+\s+min(?:s|utes)?\s+ago)|Swimming safety|Information Last updated|Lifeguards on duty|Facilities|$)/i
+    );
+
+    return cleanExtractedText(textWarning);
+  }
+
+  function hasClosureWarning(warning) {
+    // Your new rule: any warning on the child page means closed for swimming
+    return !!warning;
+  }
+
+  const warning = getChildWarning($, body);
 
   const swimmingScore = numberMatch(body, /Swimming safety.*?(\d+)\s*\/10/i);
   const surfingScore = numberMatch(body, /Surf quality\s+(\d+)\s*\/10/i);
@@ -89,9 +130,7 @@ function parseChildPage(html, beach) {
       /(\d+\s+(?:min|mins|minutes|hour|hours)\s+ago(?:\s*·\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))?)/i
     );
 
-  const isClosedForSwimming =
-    !!warning &&
-    (/closed due to weather conditions/i.test(warning) || /^Other$/i.test(warning));
+  const isClosedForSwimming = hasClosureWarning(warning);
 
   return {
     slug: beach.slug,
