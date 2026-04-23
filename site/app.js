@@ -51,6 +51,15 @@ function statusStripForBeach(beach) {
   return { className: 'card-status card-status-open', text: '○ OPEN' };
 }
 
+function minutesSinceUpdate(lastUpdatedText) {
+  if (!lastUpdatedText) return null;
+  const match = lastUpdatedText.match(/(\d+)\s*(min|mins|minutes|hour|hours)\b/i);
+  if (!match) return null;
+  const value = Number(match[1]);
+  if (!Number.isFinite(value)) return null;
+  return match[2].toLowerCase().startsWith('hour') ? value * 60 : value;
+}
+
 function bestBeach(beaches) {
   return [...beaches].sort((a, b) => {
     if (a.isClosedForSwimming !== b.isClosedForSwimming) return a.isClosedForSwimming ? 1 : -1;
@@ -134,7 +143,16 @@ function renderCards(beaches) {
 
     node.href = beach.url;
     node.querySelector('.card-title').textContent = beach.name;
-    node.querySelector('.card-updated').textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
+    const updatedEl = node.querySelector('.card-updated');
+    updatedEl.textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
+    const ageMinutes = minutesSinceUpdate(beach.lastUpdatedText);
+    if (ageMinutes != null && ageMinutes >= 240) {
+      const staleIndicator = document.createElement('span');
+      staleIndicator.className = 'stale-indicator';
+      staleIndicator.textContent = 'Potentially stale';
+      updatedEl.append(' ');
+      updatedEl.appendChild(staleIndicator);
+    }
 
     const statusEl = node.querySelector('.card-status');
     const strip = statusStripForBeach(beach);
