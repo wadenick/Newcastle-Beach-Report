@@ -78,7 +78,7 @@
     </main>
 
     <template id="card-template">
-      <a class="card" target="_blank" rel="noreferrer">
+      <article class="card">
         <div class="card-status"></div>
         <div class="card-body">
           <h3 class="card-title"></h3>
@@ -88,10 +88,11 @@
             <div class="score-line">Surf: <span class="surf-value"></span>/10 • <span class="crowd-value"></span></div>
           </div>
           <div class="card-footer">
-            <span class="card-link-text">View beach report →</span>
+            <a class="card-link card-report-link" target="_blank" rel="noreferrer">View beach report →</a>
+            <a class="card-link card-cam-link" target="_blank" rel="noreferrer">Live cam →</a>
           </div>
         </div>
-      </a>
+      </article>
     </template>
 
     <script type="module" src="./app.js"></script>

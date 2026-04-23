@@ -19,6 +19,22 @@ const beachVisuals = {
   'merewether-beach': { gradient: 'gradient-merewether', position: 83, short: 'MER' }
 };
 
+const beachCamLinks = {
+  'nobbys-beach': 'https://www.swellnet.com/surfcams/newcastle',
+  'newcastle-beach': 'https://www.surfline.com/surf-report/newcastle-beach/584204204e65fad6a770939e',
+  'bar-beach': 'https://www.surfline.com/surf-report/bar-beach/584204204e65fad6a770939f',
+  'dixon-park-beach': 'https://www.surfline.com/surf-report/dixon-park/584204204e65fad6a77093a3',
+  'merewether-beach': 'https://www.surfline.com/surf-report/merewether/584204204e65fad6a77093a2',
+  'stockton-beach': 'https://www.swellnet.com/surfcams/newcastle'
+};
+
+function camProviderLabel(url) {
+  if (!url) return null;
+  if (url.includes('surfline.com')) return 'Surfline';
+  if (url.includes('swellnet.com')) return 'Swellnet';
+  return 'Provider';
+}
+
 function scoreLabel(score) {
   if (score == null) return 'Unknown';
   if (score <= 2) return 'Poor';
@@ -140,8 +156,10 @@ function renderCards(beaches) {
   cardsEl.innerHTML = '';
   for (const beach of filteredBeaches(beaches)) {
     const node = template.content.firstElementChild.cloneNode(true);
+    const reportLinkEl = node.querySelector('.card-report-link');
+    const camLinkEl = node.querySelector('.card-cam-link');
 
-    node.href = beach.url;
+    reportLinkEl.href = beach.url;
     node.querySelector('.card-title').textContent = beach.name;
     const updatedEl = node.querySelector('.card-updated');
     updatedEl.textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
@@ -164,6 +182,17 @@ function renderCards(beaches) {
     node.querySelector('.swim-value').textContent = beach.swimmingScore ?? '—';
     node.querySelector('.surf-value').textContent = beach.surfingScore ?? '—';
     node.querySelector('.crowd-value').textContent = beach.crowdLevel ?? 'Unknown';
+    const camUrl = beachCamLinks[beach.slug];
+    if (camUrl) {
+      camLinkEl.href = camUrl;
+      camLinkEl.textContent = `Live cam (${camProviderLabel(camUrl)})`;
+    } else {
+      camLinkEl.removeAttribute('href');
+      camLinkEl.removeAttribute('target');
+      camLinkEl.removeAttribute('rel');
+      camLinkEl.textContent = 'Live cam unavailable';
+      camLinkEl.classList.add('card-link-disabled');
+    }
 
     cardsEl.appendChild(node);
   }

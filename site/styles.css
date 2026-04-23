@@ -284,12 +284,28 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid rgba(15,23,42,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
-.card-link-text {
+.card-link {
   font-size: 0.85rem;
   font-weight: 600;
   color: #0f766e;
+  text-decoration: none;
 }
+.card-link::after {
+  content: " \2197";
+  font-size: 0.78rem;
+}
+.card-link:hover { text-decoration: underline; }
+.card-link-disabled {
+  color: #94a3b8;
+  pointer-events: none;
+  text-decoration: none;
+}
+.card-link-disabled::after { content: ""; }
 .empty-state {
   border-radius: 24px;
   border: 1px dashed rgba(255,255,255,0.2);
