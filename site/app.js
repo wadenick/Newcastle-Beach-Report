@@ -41,6 +41,16 @@ function statusText(beach) {
   return 'Open';
 }
 
+function statusStripForBeach(beach) {
+  if (beach.isClosedForSwimming) {
+    return { className: 'card-status card-status-closed', text: '⚠️ CLOSED FOR SWIMMING' };
+  }
+  if ((beach.swimmingScore ?? 0) >= 5) {
+    return { className: 'card-status card-status-strong', text: '✓ STRONG OPTION' };
+  }
+  return { className: 'card-status card-status-open', text: '○ OPEN' };
+}
+
 function bestBeach(beaches) {
   return [...beaches].sort((a, b) => {
     if (a.isClosedForSwimming !== b.isClosedForSwimming) return a.isClosedForSwimming ? 1 : -1;
@@ -100,15 +110,19 @@ function renderMap(beaches) {
 function renderBestBeach(beaches) {
   const best = bestBeach(beaches);
   if (!best) return;
+  const strip = statusStripForBeach(best);
   bestBeachEl.innerHTML = `
-    <div class="best-card ${best.isClosedForSwimming ? 'best-card-closed' : ''}">
-      <div class="best-kicker">${best.name}</div>
-      <div class="best-metrics">
-        <span class="score-pill ${scoreClass(best.swimmingScore)}">Swim ${best.swimmingScore ?? '—'}/10 · ${scoreLabel(best.swimmingScore)}</span>
-        <span class="score-pill ${scoreClass(best.surfingScore)}">Surf ${best.surfingScore ?? '—'}/10 · ${scoreLabel(best.surfingScore)}</span>
+    <div class="best-card">
+      <div class="${strip.className}">${strip.text}</div>
+      <div class="best-card-body">
+        <div class="best-kicker">${best.name}</div>
+        <div class="best-metrics">
+          <span class="score-pill ${scoreClass(best.swimmingScore)}">Swim ${best.swimmingScore ?? '—'}/10 · ${scoreLabel(best.swimmingScore)}</span>
+          <span class="score-pill ${scoreClass(best.surfingScore)}">Surf ${best.surfingScore ?? '—'}/10 · ${scoreLabel(best.surfingScore)}</span>
+        </div>
+        <p class="best-copy">${best.isClosedForSwimming ? 'Currently flagged closed on the child page.' : 'Best open all-round option in the current feed.'}</p>
+        <a class="best-link" href="${best.url}" target="_blank" rel="noreferrer">Open source page →</a>
       </div>
-      <p class="best-copy">${best.isClosedForSwimming ? 'Currently flagged closed on the child page.' : 'Best open all-round option in the current feed.'}</p>
-      <a class="best-link" href="${best.url}" target="_blank" rel="noreferrer">Open source page →</a>
     </div>
   `;
 }
@@ -123,16 +137,9 @@ function renderCards(beaches) {
     node.querySelector('.card-updated').textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
 
     const statusEl = node.querySelector('.card-status');
-    if (beach.isClosedForSwimming) {
-      statusEl.textContent = '⚠️ CLOSED FOR SWIMMING';
-      statusEl.className = 'card-status card-status-closed';
-    } else if ((beach.swimmingScore ?? 0) >= 5) {
-      statusEl.textContent = '✓ STRONG OPTION';
-      statusEl.className = 'card-status card-status-strong';
-    } else {
-      statusEl.textContent = '○ OPEN';
-      statusEl.className = 'card-status card-status-open';
-    }
+    const strip = statusStripForBeach(beach);
+    statusEl.className = strip.className;
+    statusEl.textContent = strip.text;
 
     node.querySelector('.swim-value').textContent = beach.swimmingScore ?? '—';
     node.querySelector('.surf-value').textContent = beach.surfingScore ?? '—';
