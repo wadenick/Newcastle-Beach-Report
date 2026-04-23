@@ -169,7 +169,7 @@ function renderCards(beaches) {
     const updatedEl = node.querySelector('.card-updated');
     updatedEl.textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
     const ageMinutes = minutesSinceUpdate(beach.lastUpdatedText);
-    if (ageMinutes != null && ageMinutes >= 360) {
+    if (ageMinutes != null && ageMinutes >= 300) {
       const staleIndicator = document.createElement('span');
       staleIndicator.className = 'stale-indicator';
       staleIndicator.textContent = 'Old data!';
