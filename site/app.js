@@ -150,7 +150,8 @@ function renderCards(beaches) {
       const staleIndicator = document.createElement('span');
       staleIndicator.className = 'stale-indicator';
       staleIndicator.textContent = 'Old data!';
-      staleIndicator.title = "this report hasn't been updated by City staff in a while";
+      staleIndicator.dataset.tooltip = "This report hasn't been updated by City staff in a while";
+      staleIndicator.tabIndex = 0;
       updatedEl.append(' ');
       updatedEl.appendChild(staleIndicator);
     }
