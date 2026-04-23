@@ -146,10 +146,11 @@ function renderCards(beaches) {
     const updatedEl = node.querySelector('.card-updated');
     updatedEl.textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
     const ageMinutes = minutesSinceUpdate(beach.lastUpdatedText);
-    if (ageMinutes != null && ageMinutes >= 240) {
+    if (ageMinutes != null && ageMinutes >= 360) {
       const staleIndicator = document.createElement('span');
       staleIndicator.className = 'stale-indicator';
       staleIndicator.textContent = 'Old data!';
+      staleIndicator.title = "this report hasn't been updated by City staff in a while";
       updatedEl.append(' ');
       updatedEl.appendChild(staleIndicator);
     }
