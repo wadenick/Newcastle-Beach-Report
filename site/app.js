@@ -20,12 +20,12 @@ const beachVisuals = {
 };
 
 const beachCamLinks = {
-  'nobbys-beach': 'https://www.swellnet.com/surfcams/newcastle',
+  'nobbys-beach': 'https://www.surfline.com/surf-report/nobbys-beach/584204204e65fad6a7709393',
   'newcastle-beach': 'https://www.surfline.com/surf-report/newcastle-beach/584204204e65fad6a770939e',
   'bar-beach': 'https://www.surfline.com/surf-report/bar-beach/584204204e65fad6a770939f',
   'dixon-park-beach': 'https://www.surfline.com/surf-report/dixon-park/584204204e65fad6a77093a3',
   'merewether-beach': 'https://www.surfline.com/surf-report/merewether/584204204e65fad6a77093a2',
-  'stockton-beach': 'https://www.swellnet.com/surfcams/newcastle'
+  'stockton-beach': ''
 };
 
 function camProviderLabel(url) {
