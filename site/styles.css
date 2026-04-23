@@ -110,8 +110,8 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
 }
 .stat span { display:block; color: var(--muted); font-size: .95rem; }
 .stat strong { display:block; font-size: 2.4rem; margin-top: 6px; }
-.stat-danger { background: rgba(239,68,68,0.42); }
-.stat-good { background: rgba(16,185,129,0.42); }
+.stat-danger { background: rgba(239,68,68,0.22); }
+.stat-good { background: rgba(16,185,129,0.22); }
 .map-strip { margin-top: 14px; }
 .map-track {
   position: relative;
