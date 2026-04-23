@@ -149,7 +149,7 @@ function renderCards(beaches) {
     if (ageMinutes != null && ageMinutes >= 240) {
       const staleIndicator = document.createElement('span');
       staleIndicator.className = 'stale-indicator';
-      staleIndicator.textContent = 'Potentially stale';
+      staleIndicator.textContent = 'Old data!';
       updatedEl.append(' ');
       updatedEl.appendChild(staleIndicator);
     }
