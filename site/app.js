@@ -53,7 +53,6 @@ function renderStats(beaches) {
   const open = beaches.length - closed;
   const strong = beaches.filter((b) => !b.isClosedForSwimming && (b.swimmingScore ?? 0) >= 5).length;
   statsEl.innerHTML = `
-    <div class="stat"><span>Beaches tracked</span><strong>${beaches.length}</strong></div>
     <div class="stat stat-danger"><span>Swimming closed</span><strong>${closed}</strong></div>
     <div class="stat stat-good"><span>Strong options</span><strong>${strong}</strong></div>
   `;
