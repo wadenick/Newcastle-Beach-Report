@@ -76,6 +76,11 @@ function minutesSinceUpdate(lastUpdatedText) {
   return match[2].toLowerCase().startsWith('hour') ? value * 60 : value;
 }
 
+function formatTemp(value) {
+  if (!Number.isFinite(value)) return '—';
+  return `${Math.round(value)}°C`;
+}
+
 function bestBeach(beaches) {
   return [...beaches].sort((a, b) => {
     if (a.isClosedForSwimming !== b.isClosedForSwimming) return a.isClosedForSwimming ? 1 : -1;
@@ -182,6 +187,8 @@ function renderCards(beaches) {
     node.querySelector('.swim-value').textContent = beach.swimmingScore ?? '—';
     node.querySelector('.surf-value').textContent = beach.surfingScore ?? '—';
     node.querySelector('.crowd-value').textContent = beach.crowdLevel ?? 'Unknown';
+    node.querySelector('.air-temp-value').textContent = formatTemp(beach.airTemperatureC);
+    node.querySelector('.water-temp-value').textContent = formatTemp(beach.waterTemperatureC);
     const camUrl = beachCamLinks[beach.slug];
     if (camUrl) {
       camLinkEl.href = camUrl;

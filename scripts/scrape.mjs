@@ -6,14 +6,16 @@ const BASE_URL = 'https://newcastle.nsw.gov.au';
 const INDEX_URL = `${BASE_URL}/explore/beaches`;
 const OUTPUT_DIR = path.resolve('site/data');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'beaches.json');
+const OPEN_METEO_WEATHER_URL = 'https://api.open-meteo.com/v1/forecast';
+const OPEN_METEO_MARINE_URL = 'https://marine-api.open-meteo.com/v1/marine';
 
 const BEACHES = [
-  { slug: 'nobbys-beach', name: 'Nobbys Beach', url: `${BASE_URL}/explore/beaches/nobbys-beach` },
-  { slug: 'newcastle-beach', name: 'Newcastle Beach', url: `${BASE_URL}/explore/beaches/newcastle-beach` },
-  { slug: 'bar-beach', name: 'Bar Beach', url: `${BASE_URL}/explore/beaches/bar-beach` },
-  { slug: 'dixon-park-beach', name: 'Dixon Park Beach', url: `${BASE_URL}/explore/beaches/dixon-park-beach` },
-  { slug: 'merewether-beach', name: 'Merewether Beach', url: `${BASE_URL}/explore/beaches/merewether-beach` },
-  { slug: 'stockton-beach', name: 'Stockton Beach', url: `${BASE_URL}/explore/beaches/stockton-beach` }
+  { slug: 'nobbys-beach', name: 'Nobbys Beach', url: `${BASE_URL}/explore/beaches/nobbys-beach`, lat: -32.9267, lon: 151.7819 },
+  { slug: 'newcastle-beach', name: 'Newcastle Beach', url: `${BASE_URL}/explore/beaches/newcastle-beach`, lat: -32.9316, lon: 151.7838 },
+  { slug: 'bar-beach', name: 'Bar Beach', url: `${BASE_URL}/explore/beaches/bar-beach`, lat: -32.9398, lon: 151.7619 },
+  { slug: 'dixon-park-beach', name: 'Dixon Park Beach', url: `${BASE_URL}/explore/beaches/dixon-park-beach`, lat: -32.9455, lon: 151.759 },
+  { slug: 'merewether-beach', name: 'Merewether Beach', url: `${BASE_URL}/explore/beaches/merewether-beach`, lat: -32.9489, lon: 151.758 },
+  { slug: 'stockton-beach', name: 'Stockton Beach', url: `${BASE_URL}/explore/beaches/stockton-beach`, lat: -32.9095, lon: 151.7888 }
 ];
 
 function clean(text = '') {
@@ -29,6 +31,48 @@ async function fetchHtml(url) {
   });
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
   return res.text();
+}
+
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      'user-agent': 'Nick-Newcastle-Beach-Report/1.0',
+      'accept-language': 'en-AU,en;q=0.9'
+    }
+  });
+  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  return res.json();
+}
+
+function firstFiniteNumber(values) {
+  if (!Array.isArray(values)) return null;
+  const value = values.find((entry) => Number.isFinite(entry));
+  return Number.isFinite(value) ? value : null;
+}
+
+async function fetchBeachTemperatures(beach) {
+  const weatherUrl =
+    `${OPEN_METEO_WEATHER_URL}?latitude=${beach.lat}&longitude=${beach.lon}` +
+    '&hourly=temperature_2m&forecast_days=1&timezone=Australia%2FSydney';
+  const marineUrl =
+    `${OPEN_METEO_MARINE_URL}?latitude=${beach.lat}&longitude=${beach.lon}` +
+    '&hourly=sea_surface_temperature&forecast_days=1&timezone=Australia%2FSydney';
+
+  try {
+    const [weather, marine] = await Promise.all([fetchJson(weatherUrl), fetchJson(marineUrl)]);
+    return {
+      airTemperatureC: firstFiniteNumber(weather?.hourly?.temperature_2m),
+      waterTemperatureC: firstFiniteNumber(marine?.hourly?.sea_surface_temperature),
+      temperatureSource: 'Open-Meteo'
+    };
+  } catch (error) {
+    console.warn(`Temperature lookup failed for ${beach.slug}: ${error.message}`);
+    return {
+      airTemperatureC: null,
+      waterTemperatureC: null,
+      temperatureSource: 'Open-Meteo'
+    };
+  }
 }
 
 function extractIndexSummary(indexText, beachName) {
@@ -155,6 +199,7 @@ async function run() {
       const summary = extractIndexSummary(indexText, beach.name);
       const childHtml = await fetchHtml(beach.url);
       const child = parseChildPage(childHtml, beach);
+      const temps = await fetchBeachTemperatures(beach);
 
       const isClosed = child.isClosedForSwimming;
       return {
@@ -167,7 +212,10 @@ async function run() {
         summaryStatus: isClosed ? 'Closed' : (summary.summaryStatus ?? child.summaryStatus ?? 'Open'),
         childWarning: child.childWarning ?? null,
         isClosedForSwimming: isClosed,
-        lastUpdatedText: child.lastUpdatedText ?? summary.lastUpdatedText ?? null
+        lastUpdatedText: child.lastUpdatedText ?? summary.lastUpdatedText ?? null,
+        airTemperatureC: temps.airTemperatureC,
+        waterTemperatureC: temps.waterTemperatureC,
+        temperatureSource: temps.temperatureSource
       };
     })
   );
