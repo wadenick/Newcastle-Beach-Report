@@ -110,8 +110,8 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
 }
 .stat span { display:block; color: var(--muted); font-size: .95rem; }
 .stat strong { display:block; font-size: 2.4rem; margin-top: 6px; }
-.stat-danger { background: rgba(239,68,68,0.14); }
-.stat-good { background: rgba(16,185,129,0.14); }
+.stat-danger { background: rgba(239,68,68,0.42); }
+.stat-good { background: rgba(16,185,129,0.42); }
 .map-strip { margin-top: 14px; }
 .map-track {
   position: relative;
@@ -160,7 +160,7 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   width: 14px;
   height: 14px;
   border-radius: 999px;
-  border: 3px solid white;
+  border: 1px solid rgba(255,255,255,0.5);
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 .map-pin-open .map-dot { background: #0ea5e9; }
@@ -219,9 +219,9 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   text-align: center;
   border-bottom: 1px solid rgba(15,23,42,0.08);
 }
-.card-status-closed { background: #dc2626; color: #fff; }
-.card-status-open { background: #10b981; color: #fff; }
-.card-status-strong { background: #0ea5e9; color: #fff; }
+.card-status-closed { background: #dc2626dd; color: #fff; }
+.card-status-open { background: #1bb381dd; color: #fff; }
+.card-status-strong { background: #048e60dd; color: #fff; }
 .card-body {
   padding: 16px;
   flex: 1;
