@@ -50,19 +50,24 @@ function firstFiniteNumber(values) {
   return Number.isFinite(value) ? value : null;
 }
 
+function pickCurrentOrHourly(currentValue, hourlyValues) {
+  if (Number.isFinite(currentValue)) return currentValue;
+  return firstFiniteNumber(hourlyValues);
+}
+
 async function fetchBeachTemperatures(beach) {
   const weatherUrl =
     `${OPEN_METEO_WEATHER_URL}?latitude=${beach.lat}&longitude=${beach.lon}` +
-    '&hourly=temperature_2m&forecast_days=1&timezone=Australia%2FSydney';
+    '&current=temperature_2m&hourly=temperature_2m&forecast_days=1&timezone=Australia%2FSydney';
   const marineUrl =
     `${OPEN_METEO_MARINE_URL}?latitude=${beach.lat}&longitude=${beach.lon}` +
-    '&hourly=sea_surface_temperature&forecast_days=1&timezone=Australia%2FSydney';
+    '&current=sea_surface_temperature&hourly=sea_surface_temperature&forecast_days=1&timezone=Australia%2FSydney';
 
   try {
     const [weather, marine] = await Promise.all([fetchJson(weatherUrl), fetchJson(marineUrl)]);
     return {
-      airTemperatureC: firstFiniteNumber(weather?.hourly?.temperature_2m),
-      waterTemperatureC: firstFiniteNumber(marine?.hourly?.sea_surface_temperature),
+      airTemperatureC: pickCurrentOrHourly(weather?.current?.temperature_2m, weather?.hourly?.temperature_2m),
+      waterTemperatureC: pickCurrentOrHourly(marine?.current?.sea_surface_temperature, marine?.hourly?.sea_surface_temperature),
       temperatureSource: 'Open-Meteo'
     };
   } catch (error) {

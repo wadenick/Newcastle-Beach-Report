@@ -34,10 +34,12 @@
         <div>
           <p class="banner-label">Data source</p>
           <div class="banner-value banner-link">
-            <div class="logo-container-small">
+            <a id="sourceLink" target="_blank" rel="noreferrer" aria-label="Open data source">
               <img src="https://newcastle.nsw.gov.au/getmedia/e94b0449-b8fa-43fb-906b-e92cdd88006d/logo-transparent_2x.png" alt="City of Newcastle logo" class="newcastle-logo-small" />
-            </div>
-            <a id="sourceLink" target="_blank" rel="noreferrer">open source</a>
+            </a> + 
+            <a href="https://open-meteo.com/" target="_blank" rel="noreferrer" aria-label="Open Open-Meteo source">
+              <img src="https://raw.githubusercontent.com/open-meteo/open-meteo/refs/heads/main/Public/favicon-16x16.png" alt="Open-Meteo logo" class="open-meteo-logo-small" />
+            </a>
           </div>
         </div>
       </section>
@@ -88,8 +90,8 @@
             <div class="score-line">Surf: <span class="surf-value"></span>/10 • <span class="crowd-value"></span></div>
           </div>
           <div class="card-temps">
-            <span class="temp-item">Air <span class="air-temp-value"></span></span>
-            <span class="temp-item">Water <span class="water-temp-value"></span></span>
+            <span class="temp-item temp-item-air">Air <span class="air-temp-value"></span></span>
+            <span class="temp-item temp-item-water">Water <span class="water-temp-value"></span></span>
           </div>
           <div class="card-footer">
             <a class="card-link card-report-link" target="_blank" rel="noreferrer">View beach report</a>

@@ -224,7 +224,6 @@ async function load() {
     timeStyle: 'short'
   });
   sourceLinkEl.href = payload.source || 'https://newcastle.nsw.gov.au/explore/beaches';
-  sourceLinkEl.textContent = 'Open source';
 }
 
 filters.forEach((button) => {
