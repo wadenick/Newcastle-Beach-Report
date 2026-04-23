@@ -146,7 +146,7 @@ function renderBestBeach(beaches) {
           <span class="score-pill ${scoreClass(best.surfingScore)}">Surf ${best.surfingScore ?? '—'}/10 · ${scoreLabel(best.surfingScore)}</span>
         </div>
         <p class="best-copy">${best.isClosedForSwimming ? 'Currently flagged closed on the child page.' : 'Best open all-round option in the current feed.'}</p>
-        <a class="best-link" href="${best.url}" target="_blank" rel="noreferrer">View beach report →</a>
+        <a class="best-link" href="${best.url}" target="_blank" rel="noreferrer">View beach report ↗</a>
       </div>
     </div>
   `;
