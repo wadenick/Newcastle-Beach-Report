@@ -174,7 +174,17 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 .map-pin-open .map-dot { background: #048e60; }
-.map-pin-closed .map-dot { background: #dc2626}
+.map-pin-closed .map-dot {
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}.map-pin-closed .map-dot::before {
+  content: "⚠️";
+  font-size: 14px;
+  line-height: 1;
+}
 .map-name {
   font-size: .78rem;
   color: white;
