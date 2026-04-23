@@ -148,7 +148,7 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
 .map-label.south { right: 16px; }
 .map-pin {
   position: absolute;
-  bottom: 78px;
+  bottom: 60px;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
