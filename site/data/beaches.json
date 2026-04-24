@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T10:24:41.543Z",
+  "generatedAt": "2026-04-24T11:23:43.841Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -12,9 +12,9 @@
       "summaryStatus": "Closed",
       "childWarning": "Warning: Beach closed due to weather conditions",
       "isClosedForSwimming": true,
-      "lastUpdatedText": "4 hours ago",
-      "airTemperatureC": 18.6,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "5 hours ago",
+      "airTemperatureC": 18.4,
+      "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -27,9 +27,9 @@
       "summaryStatus": "Closed",
       "childWarning": "Warning: Beach closed due to weather conditions",
       "isClosedForSwimming": true,
-      "lastUpdatedText": "4 hours ago",
-      "airTemperatureC": 18.5,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "5 hours ago",
+      "airTemperatureC": 18.3,
+      "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -42,9 +42,9 @@
       "summaryStatus": "Closed",
       "childWarning": "Warning: Beach closed due to weather conditions",
       "isClosedForSwimming": true,
-      "lastUpdatedText": "4 hours ago",
-      "airTemperatureC": 17.5,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "5 hours ago",
+      "airTemperatureC": 17.1,
+      "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -57,9 +57,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "3 hours ago",
-      "airTemperatureC": 18.6,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "4 hours ago",
+      "airTemperatureC": 18.4,
+      "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -72,9 +72,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "3 hours ago",
-      "airTemperatureC": 17.6,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "4 hours ago",
+      "airTemperatureC": 17.2,
+      "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -87,9 +87,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "3 hours ago",
-      "airTemperatureC": 17.6,
-      "waterTemperatureC": 21.7,
+      "lastUpdatedText": "4 hours ago",
+      "airTemperatureC": 17.2,
+      "waterTemperatureC": 21.6,
       "temperatureSource": "Open-Meteo"
     }
   ]
