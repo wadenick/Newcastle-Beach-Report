@@ -53,7 +53,12 @@ function scoreClass(score) {
 
 function statusText(beach) {
   if (beach.isClosedForSwimming) return 'Closed';
-  if ((beach.swimmingScore ?? 0) >= 5) return 'Strong option';
+
+  const swim = beach.swimmingScore ?? 0;
+  const surf = beach.surfingScore ?? 0;
+
+  if (swim >= 5 && surf >= 4) return 'Strong option';
+
   return 'Open';
 }
 
