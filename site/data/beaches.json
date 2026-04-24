@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T01:59:08.715Z",
+  "generatedAt": "2026-04-24T02:03:00.678Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -14,7 +14,7 @@
       "isClosedForSwimming": true,
       "lastUpdatedText": "2 hours ago",
       "airTemperatureC": 20.8,
-      "waterTemperatureC": 21.8,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -29,7 +29,7 @@
       "isClosedForSwimming": true,
       "lastUpdatedText": "2 hours ago",
       "airTemperatureC": 22.1,
-      "waterTemperatureC": 21.8,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -44,7 +44,7 @@
       "isClosedForSwimming": false,
       "lastUpdatedText": "2 hours ago",
       "airTemperatureC": 20.8,
-      "waterTemperatureC": 21.8,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -59,7 +59,7 @@
       "isClosedForSwimming": false,
       "lastUpdatedText": "19 hours ago",
       "airTemperatureC": 20.9,
-      "waterTemperatureC": 21.8,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -74,7 +74,7 @@
       "isClosedForSwimming": false,
       "lastUpdatedText": "2 hours ago",
       "airTemperatureC": 22.2,
-      "waterTemperatureC": 21.8,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -88,7 +88,7 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": "2 hours ago",
-      "airTemperatureC": 22.2,
+      "airTemperatureC": 22.3,
       "waterTemperatureC": 21.7,
       "temperatureSource": "Open-Meteo"
     }
