@@ -96,12 +96,19 @@ function bestBeach(beaches) {
 }
 
 function renderStats(beaches) {
+  const total = beaches.length;
   const closed = beaches.filter((b) => b.isClosedForSwimming).length;
   const strong = beaches.filter(isStrongOption).length;
 
   statsEl.innerHTML = `
-    <div class="stat stat-danger"><span>Swimming closed</span><strong>${closed}</strong></div>
-    <div class="stat stat-good"><span>Strong options</span><strong>${strong}</strong></div>
+    <div class="stat stat-danger">
+      <span>Swimming closed</span>
+      <strong>${closed}<small class="stat-total"> of ${total}</small></strong>
+    </div>
+    <div class="stat stat-good">
+      <span>Strong options</span>
+      <strong>${strong}<small class="stat-total"> of ${total}</small></strong>
+    </div>
   `;
 }
 
