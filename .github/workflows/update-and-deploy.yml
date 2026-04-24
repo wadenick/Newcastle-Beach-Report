@@ -8,7 +8,7 @@ on:
     - cron: '7,17,27,37,47,57 * * * *'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -47,7 +47,7 @@ jobs:
             echo "No changes to beaches.json"
           else
             git commit -m "Update beach data with latest conditions and temperature data"
-            git push
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           fi
 
       - name: Upload Pages artifact
