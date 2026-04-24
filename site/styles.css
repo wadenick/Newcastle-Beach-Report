@@ -83,7 +83,7 @@ body {
   background: linear-gradient(135deg, rgba(255,255,255,0.07), rgba(34,211,238,0.08));
 }
 .banner-label { margin: 0 0 6px; font-size: .8rem; text-transform: uppercase; letter-spacing: .16em; color: #a5f3fc; }
-.banner-value { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; }
+.banner-value { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; width: 100%; }
 .banner-link a { color: #fff; }
 .overview-grid {
   margin-top: 16px;
