@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T05:19:06.138Z",
+  "generatedAt": "2026-04-24T05:26:08.704Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -68,11 +68,11 @@
       "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
       "swimmingScore": 5,
       "surfingScore": 5,
-      "crowdLevel": "Moderately busy",
+      "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "5 hours ago",
+      "lastUpdatedText": "20 min ago",
       "airTemperatureC": 21.7,
       "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
