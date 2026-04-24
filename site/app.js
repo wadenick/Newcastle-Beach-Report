@@ -51,14 +51,16 @@ function scoreClass(score) {
   return 'score-excellent';
 }
 
-function statusText(beach) {
-  if (beach.isClosedForSwimming) return 'Closed';
-
+function isStrongOption(beach) {
   const swim = beach.swimmingScore ?? 0;
   const surf = beach.surfingScore ?? 0;
 
-  if (swim >= 5 && surf >= 4) return 'Strong option';
+  return !beach.isClosedForSwimming && swim >= 5 && surf >= 4;
+}
 
+function statusText(beach) {
+  if (beach.isClosedForSwimming) return 'Closed';
+  if (isStrongOption(beach)) return 'Strong option';
   return 'Open';
 }
 
@@ -66,7 +68,7 @@ function statusStripForBeach(beach) {
   if (beach.isClosedForSwimming) {
     return { className: 'card-status card-status-closed', text: '⚠️ CLOSED FOR SWIMMING' };
   }
-  if ((beach.swimmingScore ?? 0) >= 5) {
+  if (isStrongOption(beach)) {
     return { className: 'card-status card-status-strong', text: '✓ STRONG OPTION' };
   }
   return { className: 'card-status card-status-open', text: '○ OPEN' };
@@ -95,8 +97,8 @@ function bestBeach(beaches) {
 
 function renderStats(beaches) {
   const closed = beaches.filter((b) => b.isClosedForSwimming).length;
-  const open = beaches.length - closed;
-  const strong = beaches.filter((b) => !b.isClosedForSwimming && (b.swimmingScore ?? 0) >= 5).length;
+  const strong = beaches.filter(isStrongOption).length;
+
   statsEl.innerHTML = `
     <div class="stat stat-danger"><span>Swimming closed</span><strong>${closed}</strong></div>
     <div class="stat stat-good"><span>Strong options</span><strong>${strong}</strong></div>
@@ -146,6 +148,7 @@ function renderBestBeach(beaches) {
   const best = bestBeach(beaches);
   if (!best) return;
   const strip = statusStripForBeach(best);
+
   bestBeachEl.innerHTML = `
     <div class="best-card">
       <div class="${strip.className}">${strip.text}</div>
@@ -164,6 +167,7 @@ function renderBestBeach(beaches) {
 
 function renderCards(beaches) {
   cardsEl.innerHTML = '';
+
   for (const beach of filteredBeaches(beaches)) {
     const node = template.content.firstElementChild.cloneNode(true);
     const reportLinkEl = node.querySelector('.card-report-link');
@@ -171,8 +175,10 @@ function renderCards(beaches) {
 
     reportLinkEl.href = beach.url;
     node.querySelector('.card-title').textContent = beach.name;
+
     const updatedEl = node.querySelector('.card-updated');
     updatedEl.textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
+
     const ageMinutes = minutesSinceUpdate(beach.lastUpdatedText);
     if (ageMinutes != null && ageMinutes >= 300) {
       const staleIndicator = document.createElement('span');
@@ -194,6 +200,7 @@ function renderCards(beaches) {
     node.querySelector('.crowd-value').textContent = beach.crowdLevel ?? 'Unknown';
     node.querySelector('.air-temp-value').textContent = formatTemp(beach.airTemperatureC);
     node.querySelector('.water-temp-value').textContent = formatTemp(beach.waterTemperatureC);
+
     const camUrl = beachCamLinks[beach.slug];
     if (camUrl) {
       camLinkEl.href = camUrl;
@@ -215,19 +222,23 @@ function renderCards(beaches) {
 }
 
 async function load() {
-  const basePath = window.location.pathname.includes('/Newcastle-Beach-Report/') 
-    ? '/Newcastle-Beach-Report' 
+  const basePath = window.location.pathname.includes('/Newcastle-Beach-Report/')
+    ? '/Newcastle-Beach-Report'
     : '';
+
   const res = await fetch(`${basePath}/data/beaches.json`, { cache: 'no-store' });
   payload = await res.json();
+
   renderStats(payload.beaches);
   renderMap(payload.beaches);
   renderBestBeach(payload.beaches);
   renderCards(payload.beaches);
+
   generatedAtEl.textContent = new Date(payload.generatedAt).toLocaleString('en-AU', {
     dateStyle: 'full',
     timeStyle: 'short'
   });
+
   sourceLinkEl.href = payload.source || 'https://newcastle.nsw.gov.au/explore/beaches';
 }
 
