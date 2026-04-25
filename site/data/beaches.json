@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T03:43:02.536Z",
+  "generatedAt": "2026-04-25T05:30:56.004Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -12,9 +12,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "3 hours ago",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "5 hours ago",
+      "airTemperatureC": 22.1,
+      "waterTemperatureC": 22,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -27,24 +27,24 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "4 hours ago",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "5 hours ago",
+      "airTemperatureC": 22.1,
+      "waterTemperatureC": 22,
       "temperatureSource": "Open-Meteo"
     },
     {
       "slug": "merewether-beach",
       "name": "Merewether Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/merewether-beach",
-      "swimmingScore": 2,
-      "surfingScore": 2,
+      "swimmingScore": 3,
+      "surfingScore": 5,
       "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "21 hours ago",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "47 min ago",
+      "airTemperatureC": 22.1,
+      "waterTemperatureC": 22,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -57,9 +57,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "35 min ago",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "2 hours ago",
+      "airTemperatureC": 22.1,
+      "waterTemperatureC": 22,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -68,13 +68,13 @@
       "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
       "swimmingScore": 5,
       "surfingScore": 5,
-      "crowdLevel": "Uncrowded",
+      "crowdLevel": "Moderately busy",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "4 hours ago",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 21.9,
+      "lastUpdatedText": "35 min ago",
+      "airTemperatureC": 22.1,
+      "waterTemperatureC": 22,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -88,8 +88,8 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": "2 hours ago",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 21.8,
+      "airTemperatureC": 22.1,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     }
   ]
