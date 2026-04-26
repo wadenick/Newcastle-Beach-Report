@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T21:21:38.078Z",
+  "generatedAt": "2026-04-26T22:02:58.015Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -12,8 +12,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "17 hours ago",
-      "airTemperatureC": 15.4,
+      "lastUpdatedText": "18 hours ago",
+      "airTemperatureC": 16.5,
       "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -27,8 +27,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "14 hours ago",
-      "airTemperatureC": 15.4,
+      "lastUpdatedText": "15 hours ago",
+      "airTemperatureC": 16.5,
       "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -43,7 +43,7 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": "15 hours ago",
-      "airTemperatureC": 15.4,
+      "airTemperatureC": 16.5,
       "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -57,8 +57,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "14 hours ago",
-      "airTemperatureC": 15.4,
+      "lastUpdatedText": "15 hours ago",
+      "airTemperatureC": 16.5,
       "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -72,8 +72,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "14 hours ago",
-      "airTemperatureC": 15.4,
+      "lastUpdatedText": "15 hours ago",
+      "airTemperatureC": 16.5,
       "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -87,8 +87,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "14 hours ago",
-      "airTemperatureC": 15.4,
+      "lastUpdatedText": "15 hours ago",
+      "airTemperatureC": 16.5,
       "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
     }
