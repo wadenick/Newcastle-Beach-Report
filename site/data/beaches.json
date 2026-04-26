@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T03:41:22.091Z",
+  "generatedAt": "2026-04-26T03:42:53.578Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -87,7 +87,7 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "41 min ago",
+      "lastUpdatedText": "42 min ago",
       "airTemperatureC": 22.5,
       "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
