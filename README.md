@@ -15,7 +15,7 @@ A static GitHub Pages site that scrapes the City of Newcastle beach pages, merge
 - Scrapes each child beach page for warnings like `Warning: Beach closed due to weather conditions`
 - Generates `site/data/beaches.json`
 - Publishes the static site to GitHub Pages
-- Refreshes on a GitHub Actions schedule every 10 minutes
+- Refreshes on a GitHub Actions schedule every 10 minutes (note: GitHub cron for free accounts is unreliable)
 
 ## Local setup
 
