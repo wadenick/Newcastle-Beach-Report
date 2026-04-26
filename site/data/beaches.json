@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T00:02:14.254Z",
+  "generatedAt": "2026-04-26T02:39:36.628Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -12,24 +12,24 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "18 hours ago",
-      "airTemperatureC": 21.4,
-      "waterTemperatureC": 21.8,
+      "lastUpdatedText": "21 hours ago",
+      "airTemperatureC": 22.4,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
       "slug": "dixon-park-beach",
       "name": "Dixon Park Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/dixon-park-beach",
-      "swimmingScore": 7,
-      "surfingScore": 6,
-      "crowdLevel": "Uncrowded",
+      "swimmingScore": 6,
+      "surfingScore": 3,
+      "crowdLevel": "Moderately busy",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "17 hours ago",
-      "airTemperatureC": 21.4,
-      "waterTemperatureC": 21.8,
+      "lastUpdatedText": "1 hours ago",
+      "airTemperatureC": 22.4,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -42,9 +42,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "19 hours ago",
-      "airTemperatureC": 21.4,
-      "waterTemperatureC": 21.8,
+      "lastUpdatedText": "21 hours ago",
+      "airTemperatureC": 22.4,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -53,28 +53,28 @@
       "url": "https://newcastle.nsw.gov.au/explore/beaches/newcastle-beach",
       "swimmingScore": 6,
       "surfingScore": 4,
-      "crowdLevel": "Moderately busy",
+      "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "18 hours ago",
-      "airTemperatureC": 21.4,
-      "waterTemperatureC": 21.8,
+      "lastUpdatedText": "3 hours ago",
+      "airTemperatureC": 22.4,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
       "slug": "nobbys-beach",
       "name": "Nobbys Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
-      "swimmingScore": 6,
-      "surfingScore": 2,
-      "crowdLevel": "Uncrowded",
+      "swimmingScore": 5,
+      "surfingScore": 5,
+      "crowdLevel": "Moderately busy",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "17 hours ago",
-      "airTemperatureC": 21.4,
-      "waterTemperatureC": 21.8,
+      "lastUpdatedText": "1 hours ago",
+      "airTemperatureC": 22.4,
+      "waterTemperatureC": 21.9,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -87,9 +87,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "17 hours ago",
-      "airTemperatureC": 21.4,
-      "waterTemperatureC": 21.7,
+      "lastUpdatedText": "3 hours ago",
+      "airTemperatureC": 22.4,
+      "waterTemperatureC": 21.8,
       "temperatureSource": "Open-Meteo"
     }
   ]
