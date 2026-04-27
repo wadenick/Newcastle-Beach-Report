@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-04-27T02:19:21.445Z",
+  "generatedAt": "2026-04-27T02:26:27.591Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
       "slug": "bar-beach",
       "name": "Bar Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/bar-beach",
-      "swimmingScore": 10,
+      "swimmingScore": 9,
       "surfingScore": 2,
-      "crowdLevel": "Moderately busy",
+      "crowdLevel": "Crowded",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "2 hours ago",
+      "lastUpdatedText": "41 min ago",
       "airTemperatureC": 21.9,
       "waterTemperatureC": 22,
       "temperatureSource": "Open-Meteo"
@@ -42,7 +42,7 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "2 hours ago",
+      "lastUpdatedText": "3 hours ago",
       "airTemperatureC": 21.9,
       "waterTemperatureC": 22,
       "temperatureSource": "Open-Meteo"
