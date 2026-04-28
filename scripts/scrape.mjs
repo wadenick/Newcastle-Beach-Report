@@ -89,7 +89,7 @@ function extractIndexSummary(indexText, beachName) {
     surfingScore: numberMatch(slice, /(\d+)\s*\/10\s*Surfing/i),
     crowdLevel: textMatch(slice, /\b(Uncrowded|Moderately busy|Crowded|Temporarily Unavailable)\b/i),
     summaryStatus: textMatch(slice, /\b(Open|Closed|Temporarily Unavailable)\b/i),
-    lastUpdatedText: textMatch(slice, /Last Updated Info:\s*(.+?)(?=(\d+\s*\/10)|$)/i)
+    lastUpdatedText: extractIndexLastUpdatedText(slice)
   };
 }
 
@@ -101,6 +101,38 @@ function numberMatch(text, regex) {
 function textMatch(text, regex) {
   const match = text.match(regex);
   return match ? clean(match[1]) : null;
+}
+
+const RELATIVE_UPDATE_RE = /^(\d+)\s+(min|mins|minutes|hour|hours|day|days)\s+ago(?:\s*(?:·|-)?\s*\d{1,2}(?:(?::|\.)\d{2})?\s*(?:am|pm)?(?:\s*-\s*\d{1,2}\s+\w+\s+\d{4})?)?$/i;
+const RELATIVE_UPDATE_SCAN_RE = /\b\d+\s+(?:min|mins|minutes|hour|hours|day|days)\s+ago(?:\s*(?:·|-)?\s*\d{1,2}(?:(?::|\.)\d{2})?\s*(?:am|pm)?(?:\s*-\s*\d{1,2}\s+\w+\s+\d{4})?)?/i;
+
+function normalizeLastUpdatedText(value) {
+  if (!value) return null;
+  const cleaned = clean(value);
+  if (!cleaned) return null;
+
+  const match = cleaned.match(RELATIVE_UPDATE_RE);
+  if (!match) return null;
+
+  return cleaned.replace(/^1\s+days\b/i, '1 day');
+}
+
+function extractLastUpdatedText(text) {
+  const labelled = textMatch(
+    text,
+    /(?:Information\s+)?Last updated(?:\s+Info:)?\s+(.+?)(?=(?:\d+\s*\/10\b)|Swimming safety|Swimming\s+--|Surf quality|Surfing\b|Crowds\b|Temporarily Unavailable|Open\b|Closed\b|Under review|Final outcome|Beach Safety Guides|Lifeguards on duty|Facilities|$)/i
+  );
+
+  return normalizeLastUpdatedText(labelled) || normalizeLastUpdatedText(textMatch(text, RELATIVE_UPDATE_SCAN_RE));
+}
+
+function extractIndexLastUpdatedText(slice) {
+  const labelled = textMatch(
+    slice,
+    /Last Updated Info:\s*(.+?)(?=(?:\d+\s*\/10\b)|Swimming\s+--|Surfing\b|Temporarily Unavailable|Open\b|Closed\b|Under review|Final outcome|Beach Safety Guides|$)/i
+  );
+
+  return normalizeLastUpdatedText(labelled) || normalizeLastUpdatedText(textMatch(slice, RELATIVE_UPDATE_SCAN_RE));
 }
 
 function parseChildPage(html, beach) {
@@ -169,15 +201,7 @@ function parseChildPage(html, beach) {
     /Crowds\s+(Uncrowded|Moderately busy|Crowded|Temporarily Unavailable)/i
   );
 
-  const lastUpdatedText =
-    textMatch(
-      body,
-      /Information Last updated\s+(\d+\s+(?:min|mins|minutes|hour|hours)\s+ago(?:\s*·\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))?)/i
-    ) ||
-    textMatch(
-      body,
-      /(\d+\s+(?:min|mins|minutes|hour|hours)\s+ago(?:\s*·\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))?)/i
-    );
+  const lastUpdatedText = extractLastUpdatedText(body);
 
   const isClosedForSwimming = hasClosureWarning(warning);
 

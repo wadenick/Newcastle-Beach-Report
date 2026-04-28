@@ -76,11 +76,14 @@ function statusStripForBeach(beach) {
 
 function minutesSinceUpdate(lastUpdatedText) {
   if (!lastUpdatedText) return null;
-  const match = lastUpdatedText.match(/(\d+)\s*(min|mins|minutes|hour|hours)\b/i);
+  const match = lastUpdatedText.match(/(\d+)\s*(min|mins|minutes|hour|hours|day|days)\b/i);
   if (!match) return null;
   const value = Number(match[1]);
   if (!Number.isFinite(value)) return null;
-  return match[2].toLowerCase().startsWith('hour') ? value * 60 : value;
+  const unit = match[2].toLowerCase();
+  if (unit.startsWith('day')) return value * 24 * 60;
+  if (unit.startsWith('hour')) return value * 60;
+  return value;
 }
 
 function formatTemp(value) {
