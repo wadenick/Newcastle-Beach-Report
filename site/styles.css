@@ -264,8 +264,6 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   position: relative;
   align-items: center;
   gap: 4px;
-  margin-left: 1px;
-  padding: 2px 8px;
   background: none;
   color: #92400e;
   cursor: help;
