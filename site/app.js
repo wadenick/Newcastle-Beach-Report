@@ -190,7 +190,7 @@ function renderCards(beaches) {
     updatedEl.textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
 
     const ageMinutes = minutesSinceUpdate(beach.lastUpdatedText);
-    if (ageMinutes != null && ageMinutes >= 300) {
+    if (!beach.lastUpdatedText || (ageMinutes != null && ageMinutes >= 300)) {
       const staleIndicator = document.createElement('span');
       staleIndicator.className = 'stale-indicator';
       staleIndicator.textContent = '⚠️';
