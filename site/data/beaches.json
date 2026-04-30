@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-04-30T22:36:14.028Z",
+  "generatedAt": "2026-04-30T23:36:58.810Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
       "slug": "bar-beach",
       "name": "Bar Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/bar-beach",
-      "swimmingScore": 6,
+      "swimmingScore": 7,
       "surfingScore": 4,
       "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "19 hours ago 12.47pm - 30 Apr 2026",
-      "airTemperatureC": 19.2,
-      "waterTemperatureC": 22.2,
+      "lastUpdatedText": "1 hours ago 8.30am - 1 May 2026",
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 22.3,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -22,14 +22,14 @@
       "name": "Dixon Park Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/dixon-park-beach",
       "swimmingScore": 5,
-      "surfingScore": 4,
+      "surfingScore": 6,
       "crowdLevel": "Temporarily Unavailable",
       "summaryStatus": "Temporarily Unavailable",
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 19.2,
-      "waterTemperatureC": 22.2,
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 22.3,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -37,29 +37,29 @@
       "name": "Merewether Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/merewether-beach",
       "swimmingScore": 5,
-      "surfingScore": 4,
+      "surfingScore": 6,
       "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "17 hours ago 3.30pm - 30 Apr 2026",
-      "airTemperatureC": 19.2,
-      "waterTemperatureC": 22.2,
+      "lastUpdatedText": "53 min ago 8.43am - 1 May 2026",
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 22.3,
       "temperatureSource": "Open-Meteo"
     },
     {
       "slug": "newcastle-beach",
       "name": "Newcastle Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/newcastle-beach",
-      "swimmingScore": 6,
+      "swimmingScore": 7,
       "surfingScore": 4,
       "crowdLevel": "Temporarily Unavailable",
       "summaryStatus": "Temporarily Unavailable",
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 19.2,
-      "waterTemperatureC": 22.2,
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 22.3,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -72,9 +72,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "16 hours ago 3.45pm - 30 Apr 2026",
-      "airTemperatureC": 19.2,
-      "waterTemperatureC": 22.2,
+      "lastUpdatedText": "58 min ago 8.38am - 1 May 2026",
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 22.3,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -88,7 +88,7 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 19.2,
+      "airTemperatureC": 20.5,
       "waterTemperatureC": 22.2,
       "temperatureSource": "Open-Meteo"
     }
