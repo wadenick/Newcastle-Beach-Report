@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-05-02T23:56:28.537Z",
+  "generatedAt": "2026-05-03T04:04:38.232Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
       "slug": "bar-beach",
       "name": "Bar Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/bar-beach",
-      "swimmingScore": 5,
-      "surfingScore": 6,
+      "swimmingScore": 8,
+      "surfingScore": 4,
       "crowdLevel": "Moderately busy",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "18 hours ago 3.30pm - 2 May 2026",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 22.5,
+      "lastUpdatedText": "5 hours ago 8.45am - 3 May 2026",
+      "airTemperatureC": 25.9,
+      "waterTemperatureC": 22.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -28,8 +28,8 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 22.5,
+      "airTemperatureC": 25.9,
+      "waterTemperatureC": 22.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -38,28 +38,28 @@
       "url": "https://newcastle.nsw.gov.au/explore/beaches/merewether-beach",
       "swimmingScore": 4,
       "surfingScore": 5,
-      "crowdLevel": "Moderately busy",
+      "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "1 hours ago 8.25am - 3 May 2026",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 22.5,
+      "lastUpdatedText": "1 hours ago 12.21pm - 3 May 2026",
+      "airTemperatureC": 25.9,
+      "waterTemperatureC": 22.6,
       "temperatureSource": "Open-Meteo"
     },
     {
       "slug": "newcastle-beach",
       "name": "Newcastle Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/newcastle-beach",
-      "swimmingScore": 5,
-      "surfingScore": 6,
+      "swimmingScore": 8,
+      "surfingScore": 4,
       "crowdLevel": "Temporarily Unavailable",
       "summaryStatus": "Temporarily Unavailable",
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 22.5,
+      "airTemperatureC": 25.9,
+      "waterTemperatureC": 22.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -72,9 +72,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "1 hours ago 8.30am - 3 May 2026",
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 22.5,
+      "lastUpdatedText": "5 hours ago 8.30am - 3 May 2026",
+      "airTemperatureC": 25.9,
+      "waterTemperatureC": 22.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -88,8 +88,8 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 22.4,
-      "waterTemperatureC": 22.4,
+      "airTemperatureC": 25.9,
+      "waterTemperatureC": 22.5,
       "temperatureSource": "Open-Meteo"
     }
   ]
