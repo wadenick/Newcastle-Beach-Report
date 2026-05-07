@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T23:35:47.126Z",
+  "generatedAt": "2026-05-07T01:23:55.794Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -12,8 +12,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "18 hours ago 3.30pm - 6 May 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "33 min ago 10.50am - 7 May 2026",
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 22.1,
       "temperatureSource": "Open-Meteo"
     },
@@ -28,7 +28,7 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 22.1,
       "temperatureSource": "Open-Meteo"
     },
@@ -42,8 +42,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "43 min ago 8.52am - 7 May 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "2 hours ago 8.52am - 7 May 2026",
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 22.1,
       "temperatureSource": "Open-Meteo"
     },
@@ -58,7 +58,7 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 22.1,
       "temperatureSource": "Open-Meteo"
     },
@@ -72,8 +72,8 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "1 hours ago 8.35am - 7 May 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "48 min ago 10.35am - 7 May 2026",
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 22.1,
       "temperatureSource": "Open-Meteo"
     },
@@ -88,7 +88,7 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 22.1,
       "temperatureSource": "Open-Meteo"
     }
