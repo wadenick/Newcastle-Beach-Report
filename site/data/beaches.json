@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T01:25:59.439Z",
+  "generatedAt": "2026-05-08T04:32:13.195Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -12,9 +12,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "19 hours ago 3.50pm - 7 May 2026",
-      "airTemperatureC": 17.1,
-      "waterTemperatureC": 21.6,
+      "lastUpdatedText": "22 hours ago 3.50pm - 7 May 2026",
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 21.7,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -28,8 +28,8 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 17.1,
-      "waterTemperatureC": 21.6,
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 21.7,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -42,9 +42,9 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "2 hours ago 8.47am - 8 May 2026",
-      "airTemperatureC": 17.1,
-      "waterTemperatureC": 21.6,
+      "lastUpdatedText": "5 hours ago 8.47am - 8 May 2026",
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 21.7,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -58,8 +58,8 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 17.1,
-      "waterTemperatureC": 21.6,
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 21.7,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -68,13 +68,13 @@
       "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
       "swimmingScore": 5,
       "surfingScore": 5,
-      "crowdLevel": "Uncrowded",
+      "crowdLevel": "Moderately busy",
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "2 hours ago 8.30am - 8 May 2026",
-      "airTemperatureC": 17.1,
-      "waterTemperatureC": 21.6,
+      "lastUpdatedText": "46 min ago 1.46pm - 8 May 2026",
+      "airTemperatureC": 20.5,
+      "waterTemperatureC": 21.7,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -88,7 +88,7 @@
       "childWarning": null,
       "isClosedForSwimming": false,
       "lastUpdatedText": null,
-      "airTemperatureC": 17.1,
+      "airTemperatureC": 20.5,
       "waterTemperatureC": 21.6,
       "temperatureSource": "Open-Meteo"
     }
