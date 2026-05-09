@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-05-09T01:23:04.634Z",
+  "generatedAt": "2026-05-09T04:39:26.151Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
       "slug": "bar-beach",
       "name": "Bar Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/bar-beach",
-      "swimmingScore": 1,
+      "swimmingScore": 5,
       "surfingScore": 7,
       "crowdLevel": "Uncrowded",
-      "summaryStatus": "Closed",
-      "childWarning": "Warning: Beach closed due to weather conditions",
-      "isClosedForSwimming": true,
-      "lastUpdatedText": "20 hours ago 2.45pm - 8 May 2026",
+      "summaryStatus": "Open",
+      "childWarning": null,
+      "isClosedForSwimming": false,
+      "lastUpdatedText": "3 hours ago 11.30am - 9 May 2026",
       "airTemperatureC": 19.8,
       "waterTemperatureC": 21.6,
       "temperatureSource": "Open-Meteo"
@@ -42,7 +42,7 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "2 hours ago 9.05am - 9 May 2026",
+      "lastUpdatedText": "5 hours ago 9.05am - 9 May 2026",
       "airTemperatureC": 19.8,
       "waterTemperatureC": 21.6,
       "temperatureSource": "Open-Meteo"
@@ -51,7 +51,7 @@
       "slug": "newcastle-beach",
       "name": "Newcastle Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/newcastle-beach",
-      "swimmingScore": 1,
+      "swimmingScore": 5,
       "surfingScore": 7,
       "crowdLevel": "Temporarily Unavailable",
       "summaryStatus": "Temporarily Unavailable",
@@ -72,7 +72,7 @@
       "summaryStatus": "Open",
       "childWarning": null,
       "isClosedForSwimming": false,
-      "lastUpdatedText": "58 min ago 10.25am - 9 May 2026",
+      "lastUpdatedText": "29 min ago 2.10pm - 9 May 2026",
       "airTemperatureC": 19.8,
       "waterTemperatureC": 21.6,
       "temperatureSource": "Open-Meteo"
