@@ -135,6 +135,29 @@ function extractIndexLastUpdatedText(slice) {
   return normalizeLastUpdatedText(labelled) || normalizeLastUpdatedText(textMatch(slice, RELATIVE_UPDATE_SCAN_RE));
 }
 
+function formatSeasonalReturnDate(day, month, year) {
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const monthIndex = Number(month) - 1;
+  const monthName = monthNames[monthIndex] ?? month;
+  return `${Number(day)} ${monthName} ${year}`;
+}
+
+function extractSeasonalClosure(body) {
+  if (!/Closed for the Winter Period/i.test(body)) return null;
+
+  const returnMatch = body.match(/Lifeguards will return to this location on\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/i);
+  const seasonalReturnText = returnMatch
+    ? formatSeasonalReturnDate(returnMatch[1], returnMatch[2], returnMatch[3])
+    : null;
+
+  return {
+    seasonalClosureText: seasonalReturnText
+      ? `Closed for winter. Lifeguards return ${seasonalReturnText}.`
+      : 'Closed for winter.',
+    seasonalReturnText
+  };
+}
+
 function parseChildPage(html, beach) {
   const $ = cheerio.load(html);
   const body = clean($('body').text());
@@ -202,8 +225,9 @@ function parseChildPage(html, beach) {
   );
 
   const lastUpdatedText = extractLastUpdatedText(body);
+  const seasonalClosure = extractSeasonalClosure(body);
 
-  const isClosedForSwimming = hasClosureWarning(warning);
+  const isClosedForSwimming = hasClosureWarning(warning) || !!seasonalClosure;
 
   return {
     slug: beach.slug,
@@ -212,9 +236,12 @@ function parseChildPage(html, beach) {
     swimmingScore,
     surfingScore,
     crowdLevel,
-    summaryStatus: isClosedForSwimming ? 'Closed' : 'Open',
+    summaryStatus: seasonalClosure ? 'Closed for winter' : (isClosedForSwimming ? 'Closed' : 'Open'),
     childWarning: warning ? `Warning: ${warning}` : null,
     isClosedForSwimming,
+    isSeasonalClosure: !!seasonalClosure,
+    seasonalClosureText: seasonalClosure?.seasonalClosureText ?? null,
+    seasonalReturnText: seasonalClosure?.seasonalReturnText ?? null,
     lastUpdatedText
   };
 }
@@ -238,9 +265,12 @@ async function run() {
         swimmingScore: child.swimmingScore ?? summary.swimmingScore ?? null,
         surfingScore: child.surfingScore ?? summary.surfingScore ?? null,
         crowdLevel: child.crowdLevel ?? summary.crowdLevel ?? null,
-        summaryStatus: isClosed ? 'Closed' : (summary.summaryStatus ?? child.summaryStatus ?? 'Open'),
+        summaryStatus: child.isSeasonalClosure ? child.summaryStatus : (isClosed ? 'Closed' : (summary.summaryStatus ?? child.summaryStatus ?? 'Open')),
         childWarning: child.childWarning ?? null,
         isClosedForSwimming: isClosed,
+        isSeasonalClosure: child.isSeasonalClosure ?? false,
+        seasonalClosureText: child.seasonalClosureText ?? null,
+        seasonalReturnText: child.seasonalReturnText ?? null,
         lastUpdatedText: child.lastUpdatedText ?? summary.lastUpdatedText ?? null,
         airTemperatureC: temps.airTemperatureC,
         waterTemperatureC: temps.waterTemperatureC,
@@ -251,7 +281,7 @@ async function run() {
 
   beaches.sort((a, b) => {
     if (a.isClosedForSwimming !== b.isClosedForSwimming) {
-      return a.isClosedForSwimming ? -1 : 1;
+      return a.isClosedForSwimming ? 1 : -1;
     }
     return a.name.localeCompare(b.name);
   });

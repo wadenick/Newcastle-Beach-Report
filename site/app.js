@@ -59,12 +59,17 @@ function isStrongOption(beach) {
 }
 
 function statusText(beach) {
+  if (beach.isSeasonalClosure) return 'Closed for winter';
   if (beach.isClosedForSwimming) return 'Closed';
   if (isStrongOption(beach)) return 'Strong option';
   return 'Open';
 }
 
 function statusStripForBeach(beach) {
+  if (beach.isSeasonalClosure) {
+    const returnText = beach.seasonalReturnText ? ` - RETURNS ${beach.seasonalReturnText.toUpperCase()}` : '';
+    return { className: 'card-status card-status-seasonal', text: `CLOSED FOR WINTER${returnText}` };
+  }
   if (beach.isClosedForSwimming) {
     return { className: 'card-status card-status-closed', text: '⚠️ CLOSED FOR SWIMMING' };
   }
@@ -142,7 +147,8 @@ function renderMap(beaches) {
     pin.href = beach.url;
     pin.target = '_blank';
     pin.rel = 'noreferrer';
-    pin.className = `map-pin ${beach.isClosedForSwimming ? 'map-pin-closed' : 'map-pin-open'}`;
+    const pinStatus = beach.isSeasonalClosure ? 'map-pin-seasonal' : (beach.isClosedForSwimming ? 'map-pin-closed' : 'map-pin-open');
+    pin.className = `map-pin ${pinStatus}`;
     pin.style.left = `${visual.position}%`;
     pin.innerHTML = `
       <span class="map-dot"></span>
@@ -168,7 +174,7 @@ function renderBestBeach(beaches) {
           <span class="score-pill ${scoreClass(best.swimmingScore)}">Swim ${best.swimmingScore ?? '—'}/10 · ${scoreLabel(best.swimmingScore)}</span>
           <span class="score-pill ${scoreClass(best.surfingScore)}">Surf ${best.surfingScore ?? '—'}/10 · ${scoreLabel(best.surfingScore)}</span>
         </div>
-        <p class="best-copy">${best.isClosedForSwimming ? 'Currently flagged closed on the child page.' : 'Best open all-round option in the current feed.'}</p>
+        <p class="best-copy">${best.isSeasonalClosure ? best.seasonalClosureText : (best.isClosedForSwimming ? 'Currently flagged closed on the child page.' : 'Best open all-round option in the current feed.')}</p>
         <a class="best-link" href="${best.url}" target="_blank" rel="noreferrer">View beach report ↗</a>
       </div>
     </div>
@@ -187,10 +193,12 @@ function renderCards(beaches) {
     node.querySelector('.card-title').textContent = beach.name;
 
     const updatedEl = node.querySelector('.card-updated');
-    updatedEl.textContent = beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable';
+    updatedEl.textContent = beach.isSeasonalClosure
+      ? beach.seasonalClosureText
+      : (beach.lastUpdatedText ? `Updated ${beach.lastUpdatedText}` : 'Update time unavailable');
 
     const ageMinutes = minutesSinceUpdate(beach.lastUpdatedText);
-    if (!beach.lastUpdatedText || (ageMinutes != null && ageMinutes >= 300)) {
+    if (!beach.isSeasonalClosure && (!beach.lastUpdatedText || (ageMinutes != null && ageMinutes >= 300))) {
       const staleIndicator = document.createElement('span');
       staleIndicator.className = 'stale-indicator';
       staleIndicator.textContent = '⚠️';

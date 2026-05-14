@@ -174,6 +174,7 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 .map-pin-open .map-dot { background: #048e60; }
+.map-pin-seasonal .map-dot { background: #d97706; }
 .map-pin-closed .map-dot {
   background: none;
   display: flex;
@@ -247,6 +248,7 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
   border-bottom: 1px solid rgba(15,23,42,0.08);
 }
 .card-status-closed { background: #dc2626dd; color: #fff; }
+.card-status-seasonal { background: #d97706dd; color: #fff; }
 .card-status-open { background: #1bb381dd; color: #fff; }
 .card-status-strong { background: #048e60dd; color: #fff; }
 .card-body {
