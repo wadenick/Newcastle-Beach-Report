@@ -258,17 +258,18 @@ async function run() {
       const temps = await fetchBeachTemperatures(beach);
 
       const isClosed = child.isClosedForSwimming;
+      const isSeasonalClosure = child.isSeasonalClosure ?? false;
       return {
         slug: beach.slug,
         name: beach.name,
         url: beach.url,
-        swimmingScore: child.swimmingScore ?? summary.swimmingScore ?? null,
-        surfingScore: child.surfingScore ?? summary.surfingScore ?? null,
+        swimmingScore: isSeasonalClosure ? null : (child.swimmingScore ?? summary.swimmingScore ?? null),
+        surfingScore: isSeasonalClosure ? null : (child.surfingScore ?? summary.surfingScore ?? null),
         crowdLevel: child.crowdLevel ?? summary.crowdLevel ?? null,
         summaryStatus: child.isSeasonalClosure ? child.summaryStatus : (isClosed ? 'Closed' : (summary.summaryStatus ?? child.summaryStatus ?? 'Open')),
         childWarning: child.childWarning ?? null,
         isClosedForSwimming: isClosed,
-        isSeasonalClosure: child.isSeasonalClosure ?? false,
+        isSeasonalClosure,
         seasonalClosureText: child.seasonalClosureText ?? null,
         seasonalReturnText: child.seasonalReturnText ?? null,
         lastUpdatedText: child.lastUpdatedText ?? summary.lastUpdatedText ?? null,
