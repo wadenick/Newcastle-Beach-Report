@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T13:38:25.188Z",
+  "generatedAt": "2026-05-19T16:40:46.480Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -15,8 +15,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "14 hours ago 8.49am - 19 May 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "17 hours ago 8.49am - 19 May 2026",
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 21.4,
       "temperatureSource": "Open-Meteo"
     },
@@ -33,8 +33,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "13 hours ago 10.30am - 19 May 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "16 hours ago 10.30am - 19 May 2026",
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 21.4,
       "temperatureSource": "Open-Meteo"
     },
@@ -52,7 +52,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 21.4,
       "temperatureSource": "Open-Meteo"
     },
@@ -70,7 +70,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 21.4,
       "temperatureSource": "Open-Meteo"
     },
@@ -87,8 +87,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "8 hours ago 3.30pm - 19 May 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "11 hours ago 3.30pm - 19 May 2026",
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 21.4,
       "temperatureSource": "Open-Meteo"
     },
@@ -106,7 +106,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 21.4,
       "temperatureSource": "Open-Meteo"
     }
