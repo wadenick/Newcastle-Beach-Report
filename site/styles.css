@@ -249,6 +249,7 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); margin: 0; line-height: 1; }
 }
 .card-status-closed { background: #dc2626dd; color: #fff; }
 .card-status-seasonal { background: #d97706dd; color: #fff; }
+.card-status-none { background: #475569dd; color: #fff; }
 .card-status-open { background: #1bb381dd; color: #fff; }
 .card-status-strong { background: #048e60dd; color: #fff; }
 .card-body {

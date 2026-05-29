@@ -97,8 +97,10 @@ function formatTemp(value) {
 }
 
 function bestBeach(beaches) {
-  return [...beaches].sort((a, b) => {
-    if (a.isClosedForSwimming !== b.isClosedForSwimming) return a.isClosedForSwimming ? 1 : -1;
+  const openBeaches = beaches.filter((beach) => !beach.isClosedForSwimming);
+  if (!openBeaches.length) return null;
+
+  return [...openBeaches].sort((a, b) => {
     return (b.swimmingScore ?? -1) - (a.swimmingScore ?? -1) || (b.surfingScore ?? -1) - (a.surfingScore ?? -1);
   })[0];
 }
@@ -162,7 +164,19 @@ function renderMap(beaches) {
 
 function renderBestBeach(beaches) {
   const best = bestBeach(beaches);
-  if (!best) return;
+  if (!best) {
+    bestBeachEl.innerHTML = `
+      <div class="best-card">
+        <div class="card-status card-status-none">NO GOOD OPTION RIGHT NOW</div>
+        <div class="best-card-body">
+          <div class="best-kicker">All beaches closed</div>
+          <p class="best-copy">Every tracked beach is currently closed for swimming. Check the individual cards before heading out.</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
   const strip = statusStripForBeach(best);
 
   bestBeachEl.innerHTML = `
