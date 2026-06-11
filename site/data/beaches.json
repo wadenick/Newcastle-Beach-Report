@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T21:50:21.551Z",
+  "generatedAt": "2026-06-11T23:47:22.200Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -16,7 +16,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -33,8 +33,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "23 hours ago 8.26am - 11 Jun 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "1 day ago 8.26am - 11 Jun 2026",
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -52,7 +52,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -70,7 +70,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -87,8 +87,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "16 hours ago 3.44pm - 11 Jun 2026",
-      "airTemperatureC": 15.1,
+      "lastUpdatedText": "18 hours ago 3.44pm - 11 Jun 2026",
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -106,7 +106,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.1,
+      "airTemperatureC": 17.6,
       "waterTemperatureC": 19.7,
       "temperatureSource": "Open-Meteo"
     }
