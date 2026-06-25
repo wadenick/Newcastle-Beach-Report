@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T12:08:03.780Z",
+  "generatedAt": "2026-06-25T14:52:23.930Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -16,7 +16,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "1 day ago 3.30pm - 24 Jun 2026",
-      "airTemperatureC": 14.6,
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 19.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -33,8 +33,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "8 hours ago 1.24pm - 25 Jun 2026",
-      "airTemperatureC": 14.6,
+      "lastUpdatedText": "11 hours ago 1.24pm - 25 Jun 2026",
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 19.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -51,8 +51,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "7 hours ago 2.50pm - 25 Jun 2026",
-      "airTemperatureC": 14.6,
+      "lastUpdatedText": "10 hours ago 2.50pm - 25 Jun 2026",
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 19.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -70,7 +70,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 14.6,
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 19.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -88,7 +88,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 14.6,
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 19.9,
       "temperatureSource": "Open-Meteo"
     },
@@ -106,7 +106,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 14.6,
+      "airTemperatureC": 14.4,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     }
