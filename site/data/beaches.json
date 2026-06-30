@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T23:10:13.669Z",
+  "generatedAt": "2026-06-30T01:28:50.446Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -15,8 +15,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "17 hours ago 3.30pm - 29 Jun 2026",
-      "airTemperatureC": 12.4,
+      "lastUpdatedText": "28 min ago 11.00am - 30 Jun 2026",
+      "airTemperatureC": 15.3,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -24,8 +24,8 @@
       "slug": "dixon-park-beach",
       "name": "Dixon Park Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/dixon-park-beach",
-      "swimmingScore": 8,
-      "surfingScore": 7,
+      "swimmingScore": 6,
+      "surfingScore": 4,
       "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
@@ -33,8 +33,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "18 hours ago 3.00pm - 29 Jun 2026",
-      "airTemperatureC": 12.4,
+      "lastUpdatedText": "2 hours ago 8.36am - 30 Jun 2026",
+      "airTemperatureC": 15.3,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -51,8 +51,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "17 hours ago 3.56pm - 29 Jun 2026",
-      "airTemperatureC": 12.4,
+      "lastUpdatedText": "20 min ago 11.08am - 30 Jun 2026",
+      "airTemperatureC": 15.3,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -70,7 +70,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 12.4,
+      "airTemperatureC": 15.3,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -88,7 +88,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 12.4,
+      "airTemperatureC": 15.3,
       "waterTemperatureC": 19.8,
       "temperatureSource": "Open-Meteo"
     },
@@ -106,7 +106,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 12.4,
+      "airTemperatureC": 15.3,
       "waterTemperatureC": 19.9,
       "temperatureSource": "Open-Meteo"
     }
