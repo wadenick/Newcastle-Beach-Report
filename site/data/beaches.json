@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T03:55:25.214Z",
+  "generatedAt": "2026-08-09T05:13:04.964Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -15,7 +15,7 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "23 hours ago 2.30pm - 8 Aug 2026",
+      "lastUpdatedText": "1 day ago 2.30pm - 8 Aug 2026",
       "airTemperatureC": 15.8,
       "waterTemperatureC": 18.3,
       "temperatureSource": "Open-Meteo"
@@ -24,8 +24,8 @@
       "slug": "dixon-park-beach",
       "name": "Dixon Park Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/dixon-park-beach",
-      "swimmingScore": 6,
-      "surfingScore": 7,
+      "swimmingScore": 8,
+      "surfingScore": 6,
       "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
@@ -33,7 +33,7 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "22 hours ago 3.30pm - 8 Aug 2026",
+      "lastUpdatedText": "2 hours ago 12.23pm - 9 Aug 2026",
       "airTemperatureC": 15.8,
       "waterTemperatureC": 18.3,
       "temperatureSource": "Open-Meteo"
@@ -42,8 +42,8 @@
       "slug": "nobbys-beach",
       "name": "Nobbys Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
-      "swimmingScore": 10,
-      "surfingScore": 2,
+      "swimmingScore": 5,
+      "surfingScore": 5,
       "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
@@ -51,7 +51,7 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "5 hours ago 8.25am - 9 Aug 2026",
+      "lastUpdatedText": "1 hours ago 1.45pm - 9 Aug 2026",
       "airTemperatureC": 15.8,
       "waterTemperatureC": 18.3,
       "temperatureSource": "Open-Meteo"
