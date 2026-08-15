@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T04:39:43.054Z",
+  "generatedAt": "2026-08-15T05:02:34.934Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -16,7 +16,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "1 day ago 2.08pm - 14 Aug 2026",
-      "airTemperatureC": 17.3,
+      "airTemperatureC": 17,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -34,7 +34,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "6 hours ago 8.20am - 15 Aug 2026",
-      "airTemperatureC": 17.3,
+      "airTemperatureC": 17,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -52,7 +52,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "4 hours ago 10.30am - 15 Aug 2026",
-      "airTemperatureC": 17.3,
+      "airTemperatureC": 17,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -70,7 +70,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 17.3,
+      "airTemperatureC": 17,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -88,7 +88,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 17.3,
+      "airTemperatureC": 17,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -106,7 +106,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 17.3,
+      "airTemperatureC": 17,
       "waterTemperatureC": 18.1,
       "temperatureSource": "Open-Meteo"
     }
