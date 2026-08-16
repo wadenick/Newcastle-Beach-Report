@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T07:39:04.525Z",
+  "generatedAt": "2026-08-16T08:00:34.806Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -16,7 +16,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": null,
-      "airTemperatureC": 15.3,
+      "airTemperatureC": 14.9,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -34,7 +34,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "2 hours ago 3.26pm - 16 Aug 2026",
-      "airTemperatureC": 15.3,
+      "airTemperatureC": 14.9,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -52,7 +52,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.3,
+      "airTemperatureC": 14.9,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -70,7 +70,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.3,
+      "airTemperatureC": 14.9,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -88,7 +88,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "2 hours ago 3.21pm - 16 Aug 2026",
-      "airTemperatureC": 15.3,
+      "airTemperatureC": 14.9,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -106,7 +106,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 15.3,
+      "airTemperatureC": 14.9,
       "waterTemperatureC": 18.1,
       "temperatureSource": "Open-Meteo"
     }
