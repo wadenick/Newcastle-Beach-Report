@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T05:49:12.774Z",
+  "generatedAt": "2026-08-16T06:53:43.506Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -16,7 +16,7 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": null,
-      "airTemperatureC": 16.8,
+      "airTemperatureC": 15.8,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -33,26 +33,8 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "7 hours ago 8.30am - 16 Aug 2026",
-      "airTemperatureC": 16.8,
-      "waterTemperatureC": 18.2,
-      "temperatureSource": "Open-Meteo"
-    },
-    {
-      "slug": "nobbys-beach",
-      "name": "Nobbys Beach",
-      "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
-      "swimmingScore": 6,
-      "surfingScore": 5,
-      "crowdLevel": "Uncrowded",
-      "summaryStatus": "Open",
-      "childWarning": null,
-      "isClosedForSwimming": false,
-      "isSeasonalClosure": false,
-      "seasonalClosureText": null,
-      "seasonalReturnText": null,
-      "lastUpdatedText": "7 hours ago 8.21am - 16 Aug 2026",
-      "airTemperatureC": 16.8,
+      "lastUpdatedText": "1 hours ago 3.26pm - 16 Aug 2026",
+      "airTemperatureC": 15.8,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -70,7 +52,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 16.8,
+      "airTemperatureC": 15.8,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -88,7 +70,25 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 16.8,
+      "airTemperatureC": 15.8,
+      "waterTemperatureC": 18.2,
+      "temperatureSource": "Open-Meteo"
+    },
+    {
+      "slug": "nobbys-beach",
+      "name": "Nobbys Beach",
+      "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
+      "swimmingScore": 1,
+      "surfingScore": 5,
+      "crowdLevel": "Uncrowded",
+      "summaryStatus": "Closed",
+      "childWarning": "Warning: Shark Sighting - beach closed for swimming",
+      "isClosedForSwimming": true,
+      "isSeasonalClosure": false,
+      "seasonalClosureText": null,
+      "seasonalReturnText": null,
+      "lastUpdatedText": "1 hours ago 3.21pm - 16 Aug 2026",
+      "airTemperatureC": 15.8,
       "waterTemperatureC": 18.2,
       "temperatureSource": "Open-Meteo"
     },
@@ -106,7 +106,7 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 16.8,
+      "airTemperatureC": 15.8,
       "waterTemperatureC": 18.1,
       "temperatureSource": "Open-Meteo"
     }
