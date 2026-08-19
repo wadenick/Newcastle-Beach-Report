@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T04:57:38.510Z",
+  "generatedAt": "2026-08-19T05:38:42.989Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -15,25 +15,7 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "6 hours ago 8.28am - 19 Aug 2026",
-      "airTemperatureC": 18.6,
-      "waterTemperatureC": 18.3,
-      "temperatureSource": "Open-Meteo"
-    },
-    {
-      "slug": "dixon-park-beach",
-      "name": "Dixon Park Beach",
-      "url": "https://newcastle.nsw.gov.au/explore/beaches/dixon-park-beach",
-      "swimmingScore": 5,
-      "surfingScore": 5,
-      "crowdLevel": "Uncrowded",
-      "summaryStatus": "Open",
-      "childWarning": null,
-      "isClosedForSwimming": false,
-      "isSeasonalClosure": false,
-      "seasonalClosureText": null,
-      "seasonalReturnText": null,
-      "lastUpdatedText": "4 hours ago 10.30am - 19 Aug 2026",
+      "lastUpdatedText": "7 hours ago 8.28am - 19 Aug 2026",
       "airTemperatureC": 18.6,
       "waterTemperatureC": 18.3,
       "temperatureSource": "Open-Meteo"
@@ -51,7 +33,25 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "2 hours ago 12.30pm - 19 Aug 2026",
+      "lastUpdatedText": "3 hours ago 12.30pm - 19 Aug 2026",
+      "airTemperatureC": 18.6,
+      "waterTemperatureC": 18.3,
+      "temperatureSource": "Open-Meteo"
+    },
+    {
+      "slug": "dixon-park-beach",
+      "name": "Dixon Park Beach",
+      "url": "https://newcastle.nsw.gov.au/explore/beaches/dixon-park-beach",
+      "swimmingScore": null,
+      "surfingScore": null,
+      "crowdLevel": "Uncrowded",
+      "summaryStatus": "Closed",
+      "childWarning": "Warning: Shark Sighting - beach closed for swimming",
+      "isClosedForSwimming": true,
+      "isSeasonalClosure": false,
+      "seasonalClosureText": null,
+      "seasonalReturnText": null,
+      "lastUpdatedText": null,
       "airTemperatureC": 18.6,
       "waterTemperatureC": 18.3,
       "temperatureSource": "Open-Meteo"
