@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T17:34:38.993Z",
+  "generatedAt": "2026-08-19T17:59:04.638Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -34,8 +34,8 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "13 hours ago 2.30pm - 19 Aug 2026",
-      "airTemperatureC": null,
-      "waterTemperatureC": null,
+      "airTemperatureC": 11.4,
+      "waterTemperatureC": 18.1,
       "temperatureSource": "Open-Meteo"
     },
     {
