@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-31T06:14:03.928Z",
+  "generatedAt": "2026-08-31T14:09:52.788Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
       "slug": "bar-beach",
       "name": "Bar Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/bar-beach",
-      "swimmingScore": 6,
-      "surfingScore": 7,
+      "swimmingScore": 5,
+      "surfingScore": 5,
       "crowdLevel": "Moderately busy",
       "summaryStatus": "Open",
       "childWarning": null,
@@ -15,9 +15,9 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "3 hours ago 12.46pm - 31 Aug 2026",
-      "airTemperatureC": 18.2,
-      "waterTemperatureC": 18.9,
+      "lastUpdatedText": "9 hours ago 2.46pm - 31 Aug 2026",
+      "airTemperatureC": 12.8,
+      "waterTemperatureC": 18.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -33,17 +33,17 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "7 hours ago 8.53am - 31 Aug 2026",
-      "airTemperatureC": 18.2,
-      "waterTemperatureC": 18.9,
+      "lastUpdatedText": "15 hours ago 8.53am - 31 Aug 2026",
+      "airTemperatureC": 12.8,
+      "waterTemperatureC": 18.6,
       "temperatureSource": "Open-Meteo"
     },
     {
       "slug": "nobbys-beach",
       "name": "Nobbys Beach",
       "url": "https://newcastle.nsw.gov.au/explore/beaches/nobbys-beach",
-      "swimmingScore": 7,
-      "surfingScore": 8,
+      "swimmingScore": 6,
+      "surfingScore": 7,
       "crowdLevel": "Uncrowded",
       "summaryStatus": "Open",
       "childWarning": null,
@@ -51,9 +51,9 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "7 hours ago 8.57am - 31 Aug 2026",
-      "airTemperatureC": 18.2,
-      "waterTemperatureC": 18.9,
+      "lastUpdatedText": "8 hours ago 3.37pm - 31 Aug 2026",
+      "airTemperatureC": 12.8,
+      "waterTemperatureC": 18.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -70,8 +70,8 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 18.2,
-      "waterTemperatureC": 18.9,
+      "airTemperatureC": 12.8,
+      "waterTemperatureC": 18.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -88,8 +88,8 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 18.2,
-      "waterTemperatureC": 18.9,
+      "airTemperatureC": 12.8,
+      "waterTemperatureC": 18.6,
       "temperatureSource": "Open-Meteo"
     },
     {
@@ -106,8 +106,8 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 18.2,
-      "waterTemperatureC": 18.8,
+      "airTemperatureC": 12.8,
+      "waterTemperatureC": 18.5,
       "temperatureSource": "Open-Meteo"
     }
   ]
