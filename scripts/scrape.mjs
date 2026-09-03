@@ -7,13 +7,12 @@ const INDEX_URL = `${BASE_URL}/explore/beaches`;
 const OUTPUT_DIR = path.resolve('site/data');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'beaches.json');
 const OPEN_METEO_WEATHER_URL = 'https://api.open-meteo.com/v1/forecast';
-const OPEN_METEO_MARINE_URL = 'https://marine-api.open-meteo.com/v1/marine';
 
 const BEACHES = [
-  { slug: 'nobbys-beach', name: 'Nobbys Beach', url: `${BASE_URL}/explore/beaches/nobbys-beach`, lat: -32.9267, lon: 151.7819 },
-  { slug: 'newcastle-beach', name: 'Newcastle Beach', url: `${BASE_URL}/explore/beaches/newcastle-beach`, lat: -32.9316, lon: 151.7838 },
-  { slug: 'bar-beach', name: 'Bar Beach', url: `${BASE_URL}/explore/beaches/bar-beach`, lat: -32.9398, lon: 151.7619 },
-  { slug: 'dixon-park-beach', name: 'Dixon Park Beach', url: `${BASE_URL}/explore/beaches/dixon-park-beach`, lat: -32.9455, lon: 151.759 },
+  { slug: 'nobbys-beach', name: 'Nobbys Beach', url: `${BASE_URL}/explore/beaches/nobbys-beach`, lat: -32.92406128826557, lon: 151.793648103071 },
+  { slug: 'newcastle-beach', name: 'Newcastle Beach', url: `${BASE_URL}/explore/beaches/newcastle-beach`, lat: -32.93129415281589, lon: 151.78699887287783 },
+  { slug: 'bar-beach', name: 'Bar Beach', url: `${BASE_URL}/explore/beaches/bar-beach`, lat: -32.943203455484685, lon: 151.7676184658081 },
+  { slug: 'dixon-park-beach', name: 'Dixon Park Beach', url: `${BASE_URL}/explore/beaches/dixon-park-beach`, lat: -32.947165607802646, lon: 151.76081316948907 },
   { slug: 'merewether-beach', name: 'Merewether Beach', url: `${BASE_URL}/explore/beaches/merewether-beach`, lat: -32.9489, lon: 151.758 },
   { slug: 'stockton-beach', name: 'Stockton Beach', url: `${BASE_URL}/explore/beaches/stockton-beach`, lat: -32.9095, lon: 151.7888 }
 ];
@@ -55,27 +54,60 @@ function pickCurrentOrHourly(currentValue, hourlyValues) {
   return firstFiniteNumber(hourlyValues);
 }
 
-async function fetchBeachTemperatures(beach) {
+function pickHourlyNearTime(hourly, key, targetTime) {
+  const times = hourly?.time;
+  const values = hourly?.[key];
+  if (!Array.isArray(times) || !Array.isArray(values) || !targetTime) {
+    return firstFiniteNumber(values);
+  }
+
+  const target = new Date(targetTime).getTime();
+  if (!Number.isFinite(target)) return firstFiniteNumber(values);
+
+  let best = null;
+  let bestDistance = Infinity;
+
+  times.forEach((time, index) => {
+    const value = values[index];
+    const entryTime = new Date(time).getTime();
+    if (!Number.isFinite(value) || !Number.isFinite(entryTime)) return;
+
+    const distance = Math.abs(entryTime - target);
+    if (distance < bestDistance) {
+      best = value;
+      bestDistance = distance;
+    }
+  });
+
+  return best;
+}
+
+async function fetchBeachConditions(beach) {
   const weatherUrl =
     `${OPEN_METEO_WEATHER_URL}?latitude=${beach.lat}&longitude=${beach.lon}` +
-    '&current=temperature_2m&hourly=temperature_2m&forecast_days=1&timezone=Australia%2FSydney';
-  const marineUrl =
-    `${OPEN_METEO_MARINE_URL}?latitude=${beach.lat}&longitude=${beach.lon}` +
-    '&current=sea_surface_temperature&hourly=sea_surface_temperature&forecast_days=1&timezone=Australia%2FSydney';
+    '&current=temperature_2m,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,soil_temperature_54cm,wind_speed_10m,wind_direction_10m&forecast_days=1&timezone=Australia%2FSydney';
 
   try {
-    const [weather, marine] = await Promise.all([fetchJson(weatherUrl), fetchJson(marineUrl)]);
+    const weather = await fetchJson(weatherUrl);
     return {
       airTemperatureC: pickCurrentOrHourly(weather?.current?.temperature_2m, weather?.hourly?.temperature_2m),
-      waterTemperatureC: pickCurrentOrHourly(marine?.current?.sea_surface_temperature, marine?.hourly?.sea_surface_temperature),
-      temperatureSource: 'Open-Meteo'
+      waterTemperatureC: pickHourlyNearTime(weather?.hourly, 'soil_temperature_54cm', weather?.current?.time),
+      windSpeedKmh: pickCurrentOrHourly(weather?.current?.wind_speed_10m, weather?.hourly?.wind_speed_10m),
+      windDirectionDeg: pickCurrentOrHourly(weather?.current?.wind_direction_10m, weather?.hourly?.wind_direction_10m),
+      temperatureSource: 'Open-Meteo',
+      waterTemperatureSource: 'Open-Meteo soil_temperature_54cm',
+      windSource: 'Open-Meteo wind_speed_10m/wind_direction_10m'
     };
   } catch (error) {
-    console.warn(`Temperature lookup failed for ${beach.slug}: ${error.message}`);
+    console.warn(`Weather lookup failed for ${beach.slug}: ${error.message}`);
     return {
       airTemperatureC: null,
       waterTemperatureC: null,
-      temperatureSource: 'Open-Meteo'
+      windSpeedKmh: null,
+      windDirectionDeg: null,
+      temperatureSource: 'Open-Meteo',
+      waterTemperatureSource: 'Open-Meteo soil_temperature_54cm',
+      windSource: 'Open-Meteo wind_speed_10m/wind_direction_10m'
     };
   }
 }
@@ -255,7 +287,7 @@ async function run() {
       const summary = extractIndexSummary(indexText, beach.name);
       const childHtml = await fetchHtml(beach.url);
       const child = parseChildPage(childHtml, beach);
-      const temps = await fetchBeachTemperatures(beach);
+      const conditions = await fetchBeachConditions(beach);
 
       const isClosed = child.isClosedForSwimming;
       const isSeasonalClosure = child.isSeasonalClosure ?? false;
@@ -273,9 +305,13 @@ async function run() {
         seasonalClosureText: child.seasonalClosureText ?? null,
         seasonalReturnText: child.seasonalReturnText ?? null,
         lastUpdatedText: child.lastUpdatedText ?? summary.lastUpdatedText ?? null,
-        airTemperatureC: temps.airTemperatureC,
-        waterTemperatureC: temps.waterTemperatureC,
-        temperatureSource: temps.temperatureSource
+        airTemperatureC: conditions.airTemperatureC,
+        waterTemperatureC: conditions.waterTemperatureC,
+        temperatureSource: conditions.temperatureSource,
+        waterTemperatureSource: conditions.waterTemperatureSource,
+        windSpeedKmh: conditions.windSpeedKmh,
+        windDirectionDeg: conditions.windDirectionDeg,
+        windSource: conditions.windSource
       };
     })
   );

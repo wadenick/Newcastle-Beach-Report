@@ -96,6 +96,25 @@ function formatTemp(value) {
   return `${Math.round(value)}°C`;
 }
 
+function formatWindSpeed(value) {
+  if (!Number.isFinite(value)) return '—';
+  return `${Math.round(value)} km/h`;
+}
+
+function windCompass(degrees) {
+  if (!Number.isFinite(degrees)) return null;
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  const index = Math.round((((degrees % 360) + 360) % 360) / 45) % directions.length;
+  return directions[index];
+}
+
+function formatWind(beach) {
+  const speed = formatWindSpeed(beach.windSpeedKmh);
+  const compass = windCompass(beach.windDirectionDeg);
+  if (compass) return `${compass} ${speed}`;
+  return speed;
+}
+
 function bestBeach(beaches) {
   const openBeaches = beaches.filter((beach) => !beach.isClosedForSwimming);
   if (!openBeaches.length) return null;
@@ -232,6 +251,14 @@ function renderCards(beaches) {
     node.querySelector('.crowd-value').textContent = beach.crowdLevel ?? 'Unknown';
     node.querySelector('.air-temp-value').textContent = formatTemp(beach.airTemperatureC);
     node.querySelector('.water-temp-value').textContent = formatTemp(beach.waterTemperatureC);
+    node.querySelector('.wind-value').textContent = formatWind(beach);
+
+    const windArrowEl = node.querySelector('.wind-arrow');
+    if (Number.isFinite(beach.windDirectionDeg)) {
+      windArrowEl.style.transform = `rotate(${beach.windDirectionDeg}deg)`;
+    } else {
+      windArrowEl.hidden = true;
+    }
 
     const camUrl = beachCamLinks[beach.slug];
     if (camUrl) {
