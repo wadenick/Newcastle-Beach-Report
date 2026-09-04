@@ -115,7 +115,7 @@ function windFlowDegrees(windFromDegrees) {
 
 function formatWind(beach) {
   const speed = formatWindSpeed(beach.windSpeedKmh);
-  const compass = windCompass(windFlowDegrees(beach.windDirectionDeg));
+  const compass = windCompass(beach.windDirectionDeg);
   if (compass) return `${compass} ${speed}`;
   return speed;
 }
