@@ -145,7 +145,7 @@ function openMeteoDocsUrl(beach) {
     params.set('longitude', formatCoord(coords.lon, 5));
   }
 
-  return `https://open-meteo.com/en/docs#${params.toString()}`;
+  return `https://open-meteo.com/en/docs?${params.toString()}#api_response`;
 }
 
 function nullschoolWindUrl(beach) {
