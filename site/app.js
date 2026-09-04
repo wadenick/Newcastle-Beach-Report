@@ -134,8 +134,8 @@ function formatCoord(value, digits = 3) {
 function openMeteoDocsUrl(beach) {
   const coords = beachCoords(beach);
   const params = new URLSearchParams({
-    current: 'temperature_2m',
-    hourly: 'temperature_2m,soil_temperature_54cm',
+    current: 'temperature_2m,wind_speed_10m',
+    hourly: 'temperature_2m,soil_temperature_54cm,wind_speed_10m',
     forecast_days: '1',
     timezone: 'Australia/Sydney'
   });
