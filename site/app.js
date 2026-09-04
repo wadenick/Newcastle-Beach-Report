@@ -11,12 +11,12 @@ let currentFilter = 'all';
 let payload;
 
 const beachVisuals = {
-  'stockton-beach': { gradient: 'gradient-stockton', position: 8, short: 'STO' },
-  'nobbys-beach': { gradient: 'gradient-nobbys', position: 22, short: 'NOB' },
-  'newcastle-beach': { gradient: 'gradient-newcastle', position: 42, short: 'NEW' },
-  'bar-beach': { gradient: 'gradient-bar', position: 64, short: 'BAR' },
-  'dixon-park-beach': { gradient: 'gradient-dixon', position: 74, short: 'DIX' },
-  'merewether-beach': { gradient: 'gradient-merewether', position: 83, short: 'MER' }
+  'stockton-beach': { gradient: 'gradient-stockton', position: 8, short: 'STO', lat: -32.9095, lon: 151.7888 },
+  'nobbys-beach': { gradient: 'gradient-nobbys', position: 22, short: 'NOB', lat: -32.92406128826557, lon: 151.793648103071 },
+  'newcastle-beach': { gradient: 'gradient-newcastle', position: 42, short: 'NEW', lat: -32.93129415281589, lon: 151.78699887287783 },
+  'bar-beach': { gradient: 'gradient-bar', position: 64, short: 'BAR', lat: -32.943203455484685, lon: 151.7676184658081 },
+  'dixon-park-beach': { gradient: 'gradient-dixon', position: 74, short: 'DIX', lat: -32.947165607802646, lon: 151.76081316948907 },
+  'merewether-beach': { gradient: 'gradient-merewether', position: 83, short: 'MER', lat: -32.9489, lon: 151.758 }
 };
 
 const beachCamLinks = {
@@ -108,11 +108,53 @@ function windCompass(degrees) {
   return directions[index];
 }
 
+function windFlowDegrees(windFromDegrees) {
+  if (!Number.isFinite(windFromDegrees)) return null;
+  return (windFromDegrees + 180) % 360;
+}
+
 function formatWind(beach) {
   const speed = formatWindSpeed(beach.windSpeedKmh);
-  const compass = windCompass(beach.windDirectionDeg);
+  const compass = windCompass(windFlowDegrees(beach.windDirectionDeg));
   if (compass) return `${compass} ${speed}`;
   return speed;
+}
+
+function beachCoords(beach) {
+  const visual = beachVisuals[beach.slug];
+  const lat = Number.isFinite(beach.lat) ? beach.lat : visual?.lat;
+  const lon = Number.isFinite(beach.lon) ? beach.lon : visual?.lon;
+  return Number.isFinite(lat) && Number.isFinite(lon) ? { lat, lon } : null;
+}
+
+function formatCoord(value, digits = 3) {
+  return Number(value).toFixed(digits);
+}
+
+function openMeteoDocsUrl(beach) {
+  const coords = beachCoords(beach);
+  const params = new URLSearchParams({
+    current: 'temperature_2m',
+    hourly: 'temperature_2m,soil_temperature_54cm',
+    forecast_days: '1',
+    timezone: 'Australia/Sydney'
+  });
+
+  if (coords) {
+    params.set('latitude', formatCoord(coords.lat, 5));
+    params.set('longitude', formatCoord(coords.lon, 5));
+  }
+
+  return `https://open-meteo.com/en/docs#${params.toString()}`;
+}
+
+function nullschoolWindUrl(beach) {
+  const coords = beachCoords(beach);
+  if (!coords) return 'https://earth.nullschool.net/#current/wind/surface/level/orthographic=151.76,-32.94,9533';
+
+  const lon = formatCoord(coords.lon);
+  const lat = formatCoord(coords.lat);
+  return `https://earth.nullschool.net/#current/wind/surface/level/orthographic=${lon},${lat},9533/loc=${lon},${lat}`;
 }
 
 function bestBeach(beaches) {
@@ -249,13 +291,25 @@ function renderCards(beaches) {
     node.querySelector('.swim-value').textContent = beach.swimmingScore ?? '—';
     node.querySelector('.surf-value').textContent = beach.surfingScore ?? '—';
     node.querySelector('.crowd-value').textContent = beach.crowdLevel ?? 'Unknown';
+    const airTempEl = node.querySelector('.temp-item-air');
+    const waterTempEl = node.querySelector('.temp-item-water');
+    const windEl = node.querySelector('.wind-item');
+
+    airTempEl.href = openMeteoDocsUrl(beach);
+    airTempEl.setAttribute('aria-label', `Open Open-Meteo air temperature chart for ${beach.name}`);
+    waterTempEl.href = openMeteoDocsUrl(beach);
+    waterTempEl.setAttribute('aria-label', `Open Open-Meteo water temperature source chart for ${beach.name}`);
+    windEl.href = nullschoolWindUrl(beach);
+    windEl.setAttribute('aria-label', `Open local wind map for ${beach.name}`);
+
     node.querySelector('.air-temp-value').textContent = formatTemp(beach.airTemperatureC);
     node.querySelector('.water-temp-value').textContent = formatTemp(beach.waterTemperatureC);
     node.querySelector('.wind-value').textContent = formatWind(beach);
 
     const windArrowEl = node.querySelector('.wind-arrow');
-    if (Number.isFinite(beach.windDirectionDeg)) {
-      windArrowEl.style.transform = `rotate(${beach.windDirectionDeg}deg)`;
+    const flowDegrees = windFlowDegrees(beach.windDirectionDeg);
+    if (Number.isFinite(flowDegrees)) {
+      windArrowEl.style.transform = `rotate(${flowDegrees}deg)`;
     } else {
       windArrowEl.hidden = true;
     }

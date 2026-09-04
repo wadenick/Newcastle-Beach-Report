@@ -295,6 +295,8 @@ async function run() {
         slug: beach.slug,
         name: beach.name,
         url: beach.url,
+        lat: beach.lat,
+        lon: beach.lon,
         swimmingScore: isSeasonalClosure ? null : (child.swimmingScore ?? summary.swimmingScore ?? null),
         surfingScore: isSeasonalClosure ? null : (child.surfingScore ?? summary.surfingScore ?? null),
         crowdLevel: child.crowdLevel ?? summary.crowdLevel ?? null,
