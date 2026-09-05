@@ -35,6 +35,10 @@ function camProviderLabel(url) {
   return 'Provider';
 }
 
+function camRequiresPaidAccess(beach) {
+  return ['nobbys-beach', 'dixon-park-beach'].includes(beach.slug);
+}
+
 function scoreLabel(score) {
   if (score == null) return 'Unknown';
   if (score <= 2) return 'Poor';
@@ -316,8 +320,14 @@ function renderCards(beaches) {
 
     const camUrl = beachCamLinks[beach.slug];
     if (camUrl) {
+      const provider = camProviderLabel(camUrl);
+      const paidIndicator = camRequiresPaidAccess(beach) ? ' $' : '';
       camLinkEl.href = camUrl;
-      camLinkEl.textContent = `Live cam (${camProviderLabel(camUrl)})`;
+      camLinkEl.textContent = `Live cam (${provider}${paidIndicator})`;
+      if (paidIndicator) {
+        camLinkEl.title = 'May require paid Surfline access';
+        camLinkEl.setAttribute('aria-label', `Live cam from ${provider}, may require paid access`);
+      }
     } else {
       camLinkEl.removeAttribute('href');
       camLinkEl.removeAttribute('target');
