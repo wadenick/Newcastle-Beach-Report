@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T16:18:23.409Z",
+  "generatedAt": "2026-09-20T18:55:00.709Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -18,12 +18,12 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": "1 day ago 11.34am - 19 Sep 2026",
-      "airTemperatureC": 18.8,
-      "waterTemperatureC": 18.9,
+      "airTemperatureC": 18.5,
+      "waterTemperatureC": 19,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 22,
-      "windDirectionDeg": 309,
+      "windSpeedKmh": 23.4,
+      "windDirectionDeg": 313,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -41,13 +41,13 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "10 hours ago 3.28pm - 20 Sep 2026",
-      "airTemperatureC": 18.8,
-      "waterTemperatureC": 18.9,
+      "lastUpdatedText": "13 hours ago 3.28pm - 20 Sep 2026",
+      "airTemperatureC": 18.5,
+      "waterTemperatureC": 19,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 22,
-      "windDirectionDeg": 309,
+      "windSpeedKmh": 23.4,
+      "windDirectionDeg": 313,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -65,13 +65,13 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "11 hours ago 2.45pm - 20 Sep 2026",
-      "airTemperatureC": 18.8,
-      "waterTemperatureC": 17.5,
+      "lastUpdatedText": "14 hours ago 2.45pm - 20 Sep 2026",
+      "airTemperatureC": 18.5,
+      "waterTemperatureC": 17.6,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 22,
-      "windDirectionDeg": 309,
+      "windSpeedKmh": 23.4,
+      "windDirectionDeg": 313,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -90,12 +90,12 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 18.8,
-      "waterTemperatureC": 18.9,
+      "airTemperatureC": 18.5,
+      "waterTemperatureC": 19,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 22,
-      "windDirectionDeg": 309,
+      "windSpeedKmh": 23.4,
+      "windDirectionDeg": 313,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -114,12 +114,12 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 18.8,
-      "waterTemperatureC": 17.5,
+      "airTemperatureC": 18.5,
+      "waterTemperatureC": 17.6,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 22,
-      "windDirectionDeg": 309,
+      "windSpeedKmh": 23.4,
+      "windDirectionDeg": 313,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -138,12 +138,12 @@
       "seasonalClosureText": "Closed for winter. Lifeguards return 26 Sep 2026.",
       "seasonalReturnText": "26 Sep 2026",
       "lastUpdatedText": null,
-      "airTemperatureC": 18.8,
-      "waterTemperatureC": 17.5,
+      "airTemperatureC": 18.5,
+      "waterTemperatureC": 17.6,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 22,
-      "windDirectionDeg": 309,
+      "windSpeedKmh": 23.4,
+      "windDirectionDeg": 313,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     }
   ]
