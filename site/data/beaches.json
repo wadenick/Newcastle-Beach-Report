@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T16:34:53.574Z",
+  "generatedAt": "2026-09-26T19:24:17.771Z",
   "source": "https://newcastle.nsw.gov.au/explore/beaches",
   "beaches": [
     {
@@ -17,13 +17,13 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "10 hours ago 3.45pm - 26 Sep 2026",
-      "airTemperatureC": 18.4,
-      "waterTemperatureC": 20.1,
+      "lastUpdatedText": "13 hours ago 3.45pm - 26 Sep 2026",
+      "airTemperatureC": 17.6,
+      "waterTemperatureC": 20.2,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 25.2,
-      "windDirectionDeg": 181,
+      "windSpeedKmh": 23.8,
+      "windDirectionDeg": 184,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -41,13 +41,13 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "10 hours ago 4.30pm - 26 Sep 2026",
-      "airTemperatureC": 18.4,
-      "waterTemperatureC": 20.1,
+      "lastUpdatedText": "12 hours ago 4.30pm - 26 Sep 2026",
+      "airTemperatureC": 17.6,
+      "waterTemperatureC": 20.2,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 25.2,
-      "windDirectionDeg": 181,
+      "windSpeedKmh": 23.8,
+      "windDirectionDeg": 184,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -66,12 +66,12 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": null,
-      "airTemperatureC": 18.4,
-      "waterTemperatureC": 20.1,
+      "airTemperatureC": 17.6,
+      "waterTemperatureC": 20.2,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 25.2,
-      "windDirectionDeg": 181,
+      "windSpeedKmh": 23.8,
+      "windDirectionDeg": 184,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -90,12 +90,12 @@
       "seasonalClosureText": null,
       "seasonalReturnText": null,
       "lastUpdatedText": null,
-      "airTemperatureC": 18.4,
-      "waterTemperatureC": 19,
+      "airTemperatureC": 17.6,
+      "waterTemperatureC": 19.1,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 25.2,
-      "windDirectionDeg": 181,
+      "windSpeedKmh": 23.8,
+      "windDirectionDeg": 184,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -113,13 +113,13 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "11 hours ago 2.50pm - 26 Sep 2026",
-      "airTemperatureC": 18.4,
-      "waterTemperatureC": 19,
+      "lastUpdatedText": "14 hours ago 2.50pm - 26 Sep 2026",
+      "airTemperatureC": 17.6,
+      "waterTemperatureC": 19.1,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 25.2,
-      "windDirectionDeg": 181,
+      "windSpeedKmh": 23.8,
+      "windDirectionDeg": 184,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     },
     {
@@ -137,13 +137,13 @@
       "isSeasonalClosure": false,
       "seasonalClosureText": null,
       "seasonalReturnText": null,
-      "lastUpdatedText": "10 hours ago 4.30pm - 26 Sep 2026",
-      "airTemperatureC": 18.4,
-      "waterTemperatureC": 19,
+      "lastUpdatedText": "12 hours ago 4.30pm - 26 Sep 2026",
+      "airTemperatureC": 17.6,
+      "waterTemperatureC": 19.1,
       "temperatureSource": "Open-Meteo",
       "waterTemperatureSource": "Open-Meteo soil_temperature_54cm",
-      "windSpeedKmh": 25.2,
-      "windDirectionDeg": 181,
+      "windSpeedKmh": 23.8,
+      "windDirectionDeg": 184,
       "windSource": "Open-Meteo wind_speed_10m/wind_direction_10m"
     }
   ]
